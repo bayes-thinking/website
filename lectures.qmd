@@ -1,0 +1,17 @@
+---
+title: ""
+format: html
+---
+
+| Topic                      | Notes | Examples |
+|----------------------------|-------|----------|
+| Introduction to Technology |       |          |
+| Probability                |       |          |
+| Probability Distributions  |       |          |
+| Bayes Theorem              |       |          |
+| Distributions: Priors      |       |          |
+| Distributions: Data        |       |          |
+| Beta-Binomial              |       |          |
+| Normal-Normal              |       |          |
+| MCMC & Gibbs Sampler       |       |          |
+| Predictions                |       |          |

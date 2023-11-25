@@ -1,0 +1,26 @@
+project:
+  type: website
+
+website:
+  title: "Bayesian Thinking"
+  navbar:
+    left:
+      - href: index.qmd
+        text: "Home"
+      - href: lectures.qmd
+        text: "Topic Notes"
+      - href: examples.qmd
+        text: "Examples"
+      
+        
+        
+format:
+  html:
+    theme: journal
+    
+execute:
+  freeze: auto
+  
+  
+  
+  
