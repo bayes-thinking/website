@@ -1,5 +1,7 @@
 # Bayesian Thinking
 
+Please see our website: [http://bayes-thinking.github.io/website](Bayes Thinking Website)
+
 Topics are as follows:
 
 - Intro to technology
