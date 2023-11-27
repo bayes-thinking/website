@@ -7,10 +7,8 @@ website:
     left:
       - href: index.qmd
         text: "Home"
-      - href: lectures.qmd
-        text: "Topic Notes"
-      - href: examples.qmd
-        text: "Examples"
+      - href: about.qmd
+        text: "About"
       
         
         
