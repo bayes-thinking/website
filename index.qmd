@@ -5,12 +5,13 @@ format: html
 | Topic                      | Notes | Examples |
 |----------------------------|-------|----------|
 | Introduction to Technology |       |          |
-| Probability                |       |          |
+| Probability                | [part 1 lesson plan](https://github.com/bayes-thinking/website/blob/main/instructors/1-0-probability-1-lesson-plan.qmd), [part 2 lesson plan](https://github.com/bayes-thinking/website/blob/main/instructors/2-0-probability-2-lesson-plan.qmd) |          |
 | Probability Distributions  |       |          |
 | Bayes Theorem              |       |          |
-| Distributions: Priors      |       |          |
+| Distributions: Priors      | [lesson plan](https://github.com/bayes-thinking/website/blob/main/instructors/4-0-priors-lesson-plan.qmd) |          |
 | Distributions: Data        |       |          |
 | Beta-Binomial              |       |          |
-| Normal-Normal              |       |          |
-| MCMC & Gibbs Sampler       |       |          |
+| Normal-Normal              | [lesson plan](https://github.com/bayes-thinking/website/blob/main/instructors/7-0-normal-normal-lesson-plan.qmd)      |          |
+| MCMC       |       |          |
+| Gibbs Sampler       |       |          |
 | Predictions                |       |          |
