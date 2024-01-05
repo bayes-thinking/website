@@ -1,1 +1,1 @@
-Sitemap: https://github.com/bayes-thinking/website/sitemap.xml
+Sitemap: https://bayes-thinking.github.io/website/sitemap.xml
