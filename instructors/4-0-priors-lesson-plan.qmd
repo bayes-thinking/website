@@ -1,0 +1,125 @@
+---
+title: "Prior Distributions"
+format: 
+  html:
+    embed-resources: true
+execute:
+  echo: true
+  warning: false
+  message: false
+editor: source  
+---
+
+**Objective:** 
+
+- By the end of this lesson, students will have reviewed the following topics:
+
+    - Definition of prior distribution
+    - Definition of hyperparameter
+    - Identify appropriate distribution to represent belief
+
+**Duration:** 
+
+- 75 minutes
+
+**Materials:**
+
+- Handouts with exercises and problems related to basic probability
+- Computer, projector, and screen
+
+**Introduction:**
+
+- What should the probability distribution be for the maximum temperature 1 year from today? 
+
+- What should the probability distribution be for the final grade in this course?
+
+**Introduce the lesson's topic:** 
+
+- Today we will apply our knowledge of distributions to represent our prior beliefs.
+
+**Main Content:** 
+
+*Vocabulary*
+
+- Prior distribution: probability model for our prior understanding of $\text{P}[\text{event}]$.
+
+    - Hyperparameter: parameter in the specified prior distribution.
+
+- Data distribution: probability model for the outcome, $y$.
+
+    - Parameter: parameter in the specified data distribution.
+
+- Posterior distribution: probability model that summarizes the plausibility of the outcome, $y$, given the prior information.
+
+*Beta distribution*
+
+Suppose we are looking at binary outcomes; we want to put a prior on $\pi = P[Y=1]$, meaning $\pi \in [0, 1]$.
+
+The Beta model (often used to describe the variability in $\pi$) has shape parameters $\alpha > 0$ and $\beta > 0$, and these are the shape hyperparameters. 
+
+$$\pi \sim \text{Beta}\left(\alpha, \beta \right),$$
+
+The Beta model's pdf is
+
+$$f\left( \pi \right) = \frac{\Gamma \left( \alpha + \beta \right)}{\Gamma \left( \alpha \right) \Gamma \left( \beta \right)} \pi^{\alpha-1} (1-\pi)^{\beta-1},$$
+
+- Note the following:
+
+    - $\Gamma\left( z \right) = \int_{0}^{\infty} x^{z-1} e^{-y} dx$
+    
+    - $\Gamma\left( z + 1 \right) = z \Gamma\left( z \right)$
+    
+    - if $z\in \mathbb{Z}^+$, then $\Gamma\left( z \right) = (z-1)!$
+
+*Normal distribution*
+
+Suppose we are now examining a continuous outcome. Let $Y$ be a continuous random variable that can take any value in $\mathbb{R}$; i.e., $Y \in \left(-\infty, \infty\right)$. 
+
+Let us assume that the variability in $Y$ can be represented by the normal distribution with mean parameter $\mu \in \mathbb{R}$ and standard deviation parameter $\sigma \in \mathbb{R}^+$.
+
+$$Y \sim N\left(\mu, \sigma^2\right)$$
+
+The normal model's pdf is 
+
+$$f(y) = \frac{1}{\sqrt{2\pi\sigma^2}} \exp\left\{-\frac{\left(y - \mu\right)^2}{2\sigma^2} \right\}$$
+
+- Note: $\sigma$ provides a sense of scale for $Y$; approximately 95% of $Y$ values will be within 2 standard deviations. 
+
+    - i.e., $\mu \pm 2 \sigma$
+
+
+**Calculation and Practice:**
+
+- Examples for the Beta distribution:
+
+    - Example 1: plotting with different parameters
+    
+    - Example 2: students evaluate and choose between three distributions
+    
+    - Example 3: students derive appropriate prior
+
+- Examples for the normal distribution:
+
+    - Example 1: what happens as variability changes?
+    
+    - Example 2: students construct appropriate normals with given mean
+    
+    - Example 3: students derive appropriate prior
+
+**Discussion and Wrap-Up:**
+
+- Facilitate a class discussion to review the example problems, reinforce key concepts, and answer any questions the students have.
+
+**Homework:**
+
+- Assign additional problems to practice the basic probability rules.
+
+**Formative Assessment:**
+
+- Evaluate students based on their participation in discussions, their ability to solve example problems, and their performance on the assigned homework.
+
+**Conclusion:**
+
+- Emphasize that a prior will not make or break an analysis.
+
+- Our goal is to analyze in the best way possible. 
