@@ -1,0 +1,146 @@
+---
+title: "Review of Basic Probability - Part 1"
+format: 
+  html:
+    embed-resources: true
+execute:
+  echo: true
+  warning: false
+  message: false
+editor: source  
+---
+
+**Objective:** 
+
+- By the end of this lesson, students will have reviewed the following topics:
+
+    - Definition of events
+    - Definition of sample space
+    - Definition of probability
+    - Law of Large Numbers
+    - Addition Rule for mutually exclusive events
+    - General Addition Rule
+    - Complement Rule
+
+**Duration:** 
+
+- 75 minutes
+
+**Materials:**
+
+- Handouts with exercises and problems related to basic probability
+- Computer, projector, and screen
+
+**Introduction:**
+
+- Examples that can be used to jump start topic:
+
+    - [birthday problem](https://en.wikipedia.org/wiki/Birthday_problem)
+    
+    - [Monty Hall problem](https://en.wikipedia.org/wiki/Monty_Hall_problem)
+    
+    - [casino games](https://www.liveabout.com/get-an-edge-at-the-casino-by-knowing-which-games-have-the-best-odds-4582276)
+
+**Introduce the lesson's topic:** 
+
+- Today we will review basic probability rules.
+
+**Historical Context:**
+
+- 1560s: Cardano wrote *Liber de ludo aleae*, the first known systematic treatment of probability, and as the result of a gambling addiction.
+
+- 1654: Fermat and Pascal worked on the foundation of probability theory through correspondence.
+
+- 1812 and 1814: Laplace published *Théorie analytique des probabilités* and *Essai philosophique sur les probabilités*, outlining many basic and fundamental results in statistics.
+
+**Main Content:** 
+
+- **Review of Events, Sample Spaces, and Probability:**
+    
+    - **Probability**: a number between 0 and 1 that measures the uncertainty of a particular event.
+    
+        - $p = 0 \to$ event will never happen.
+        
+        - $p = 1 \to$ event will definitely happen.
+    
+    - **Intuitive probability**:
+    
+        - What is the probability of being pulled over while speeding in Gulf Breeze?
+        
+        - What is the probability of seeing a penguin walk around UWF?
+        
+        - What is the probability of seeing an armadillo walk around UWF?
+        
+    - **Events**: an outcome (or collection of outcomes) in a statistical experiment
+    
+        - Events can be defined and described in three ways ([1.7 in Albert and Hu](https://bayesball.github.io/BOOK/probability-a-measurement-of-uncertainty.html#events-and-event-operations)):
+        
+            1. $A \cap B$ is the *intersection* between $A$ and $B$; it is the event that both $A$ and $B$ occur.
+            
+            2. $A \cup B$ is the *union* between $A$ and $B$; it is the event that either $A$ or $B$ occur.
+            
+            3. $A^c$ is the *complement* of $A$; it is the event that $A$ does not occur.
+    
+    - **Sample spaces**: all possible outcomes of a statistical experiment
+  
+- **Addition Rules**
+
+    - **Mutually exclusive events:** events that have no outcomes in common; also known as disjoint
+    
+        - Venn Diagram examples
+    
+    - **Addition Rule for Mutually Exclusive Events:** if $A$ and $B$ are mutually exclusive events, then $$P(A \cup B) = P(A) + P(B)$$
+    
+        - Examples: 1 instructor works through, 2 students work through
+    
+    - **General Addition Rule:** regardless of $A$ and $B$ being mutually exclusive events, $$P(A \cup B) = P(A) + P(B) - P(A \cap B)$$
+    
+        - Examples: 1 instructor works through, 2 students work through
+    
+    - **Complements:** if $S$ is the sample space, then the complement of event $A$, denoted by $A^c$ is all outcomes in $S$ that are not outcomes in event $A$.
+    
+    - **Complement Rule:** consider any event $A$ and its complement, $A^c$. From probability rules, we know $$P(A^c) = 1 - P(A)$$
+    
+        - Examples: 1 the instructor works through, 2 students work through
+
+**Calculation and Practice:**
+
+- Examples for events and sample spaces:
+
+    - Example 1: 
+    
+    - Example 2:
+    
+    - Example 3:
+
+- Examples for the Addition Rule for Mutually Exclusive Events:
+
+    - Example 1
+    
+    - Example 2
+    
+    - Example 3
+    
+- Examples for the General Addition Rule:
+
+    - Example 1
+    
+    - Example 2
+    
+    - Example 3
+
+**Discussion and Wrap-Up:**
+
+- Facilitate a class discussion to review the example problems, reinforce key concepts, and answer any questions the students have.
+
+**Homework:**
+
+- Assign additional problems to practice the basic probability rules.
+
+**Formative Assessment:**
+
+- Evaluate students based on their participation in discussions, their ability to solve example problems, and their performance on the assigned homework.
+
+**Conclusion:**
+
+- Emphasize these are building blocks for the next lesson and long term understanding probability.

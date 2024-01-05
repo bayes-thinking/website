@@ -1,0 +1,85 @@
+---
+title: "Review of Basic Probability - Part 2"
+format: 
+  html:
+    embed-resources: true
+execute:
+  echo: true
+  warning: false
+  message: false
+editor: source  
+---
+
+**Objective:** 
+
+- By the end of this lesson, students will have reviewed the following topics:
+
+    - Independent/dependent events
+    - Multiplication Rule for independent events
+    - Conditional probability
+    - General Multiplication Rule for dependent events
+
+**Duration:** 
+
+- 75 minutes
+
+**Materials:**
+
+- Handouts with exercises and problems related to basic probability
+- Computer, projector, and screen
+
+**Introduction:**
+
+- Examples that can be used to jump start topic:
+
+    - [birthday problem](https://en.wikipedia.org/wiki/Birthday_problem)
+    
+    - [Monty Hall problem](https://en.wikipedia.org/wiki/Monty_Hall_problem)
+    
+    - [casino games](https://www.liveabout.com/get-an-edge-at-the-casino-by-knowing-which-games-have-the-best-odds-4582276)
+
+**Introduce the lesson's topic:** 
+
+- Today we will continue reviewing basic probability rules.
+
+**Historical Context:**
+
+- 1560s: Cardano wrote *Liber de ludo aleae*, the first known systematic treatment of probability, and as the result of a gambling addiction.
+
+- 1654: Fermat and Pascal worked on the foundation of probability theory through correspondence.
+
+- 1812 and 1814: Laplace published *Théorie analytique des probabilités* and *Essai philosophique sur les probabilités*, outlining many basic and fundamental results in statistics.
+
+**Main Content:** 
+
+- **Conditional probability**: if $A$ and $B$ are any two events,
+
+$$P(A|B) = \frac{P(A \cap B)}{P(A)}$$
+
+- **General Multiplication Rule for dependent events**: the probability that two events $A$ and $B$ both occur is
+
+$$P(A \cap B) = P(A) \times P(A|B)$$
+
+- **Independent/dependent events**: two events, $A$ and $B$ are independent if 
+
+$$P(A|B) = P(A) \text{ or } P(B|A) = P(B)$$
+
+- **Multiplication Rule for independent events**: when two events are independent,
+
+$$P(A \cap B) = P(A) \times P(B)$$
+
+**Discussion and Wrap-Up:**
+
+- Facilitate a class discussion to review the example problems, reinforce key concepts, and answer any questions the students have.
+
+**Homework:**
+
+- Assign additional problems to practice the basic probability rules.
+
+**Formative Assessment:**
+
+- Evaluate students based on their participation in discussions, their ability to solve example problems, and their performance on the assigned homework.
+
+**Conclusion:**
+
+- Emphasize these are building blocks for the next lesson and long term understanding probability.

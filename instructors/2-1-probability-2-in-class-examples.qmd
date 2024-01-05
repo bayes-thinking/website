@@ -1,0 +1,77 @@
+---
+title: "Examples for Review of Basic Probability - Part 2"
+format: 
+  html:
+    embed-resources: true
+execute:
+  echo: true
+  warning: false
+  message: false
+editor: source  
+---
+
+### Conditional Probability
+
+::: {.panel-tabset}
+
+## Example 1
+
+In a recent survey, a random sample of adult Americans (18+) was asked, "How likely are you to trust a news report from American media, such as MSNBC or Fox News?"
+
+[contingency table here]
+
+a. What is the probability that a randomly selected individual is 55+ years of age given that they are more likely to trust the news report?
+
+b. What is the probability that a randomly selected individual is more likely to trust the news report given that they are 55+ years of age?
+
+## Example 2
+
+
+    
+## Example 3
+
+Set up: separate class into groups.
+
+Mammograms are used to detect breast cancer. Suppose a mammogram is known to be 80% accurate. Further, suppose that in the United States, 50 million women are tested for breast cancer with mammograms and, of those tested, 250,000 have breast cancer (regardless of the results of the mammogram). Finally, the probability of a false positive is 0.07.
+
+a. What is the mathematical representation of *suppose a mammogram is known to be 80% accurate*?
+
+b. What is the mathematical representation of *probability of a false positive is 0.07*?
+
+c. Using the information given, construct the contingency table for mammogram $\times$ cancer diagnosis.
+
+
+:::
+
+### Independent Events
+
+::: {.panel-tabset}
+
+## Example 1
+
+The probability that a randomly selected person in the United States earns more than $100,000 per year is 0.179.
+
+The probability that a randomly selected person in the United States earns more than $100,000 per year given that they have earned a bachelor's degree is 0.371.
+
+Are these two events independent?
+
+## Example 2
+
+## Example 3
+
+:::
+
+### Multiplication Rule for Independent Events
+
+::: {.panel-tabset}
+
+## Example 1
+
+## Example 2
+
+## Example 3
+
+:::
+
+
+

@@ -1,0 +1,650 @@
+---
+title: "Examples for Review of Basic Probability - Part 1"
+format: 
+  html:
+    embed-resources: true
+execute:
+  echo: true
+  warning: false
+  message: false
+editor: source  
+---
+
+### Events and Sample Spaces
+
+::: {.panel-tabset}
+## Example 1
+
+- Suppose we roll two fair, indistinguishable, dice. 
+
+    - What is the sample space?
+    
+    - Does order matter for the experiment? Why or why not?
+
+    - Let event $A$ be rolling doubles. What are the outcomes that belong to event $A$?
+
+    - Let event $B$ be rolling at least one odd number. What are the outcomes that belong to event $B$?
+    
+- *Table of possible outcomes when rolling two fair, indistinguishable dice*:
+
+<center>
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-wo29{border-color:#c0c0c0;text-align:left;vertical-align:top}
+</style>
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-wo29">(1, 1)</th>
+    <th class="tg-wo29">(1, 2)</th>
+    <th class="tg-wo29">(1, 3)</th>
+    <th class="tg-wo29">(1, 4)</th>
+    <th class="tg-wo29">(1, 5)</th>
+    <th class="tg-wo29">(1, 6)</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-wo29">(2, 1)</td>
+    <td class="tg-wo29">(2, 2)</td>
+    <td class="tg-wo29">(2, 3)</td>
+    <td class="tg-wo29">(2, 4)</td>
+    <td class="tg-wo29">(2, 5)</td>
+    <td class="tg-wo29">(2, 6)</td>
+  </tr>
+  <tr>
+    <td class="tg-wo29">(3, 1)</td>
+    <td class="tg-wo29">(3, 2)</td>
+    <td class="tg-wo29">(3, 3)</td>
+    <td class="tg-wo29">(3, 4)</td>
+    <td class="tg-wo29">(3, 5)</td>
+    <td class="tg-wo29">(3, 6)</td>
+  </tr>
+  <tr>
+    <td class="tg-wo29">(4, 1)</td>
+    <td class="tg-wo29">(4, 2)</td>
+    <td class="tg-wo29">(4, 3)</td>
+    <td class="tg-wo29">(4, 4)</td>
+    <td class="tg-wo29">(4, 5)</td>
+    <td class="tg-wo29">(4, 6)</td>
+  </tr>
+  <tr>
+    <td class="tg-wo29">(5, 1)</td>
+    <td class="tg-wo29">(5, 2)</td>
+    <td class="tg-wo29">(5, 3)</td>
+    <td class="tg-wo29">(5, 4)</td>
+    <td class="tg-wo29">(5, 5)</td>
+    <td class="tg-wo29">(5, 6)</td>
+  </tr>
+  <tr>
+    <td class="tg-wo29">(6, 1)</td>
+    <td class="tg-wo29">(6, 2)</td>
+    <td class="tg-wo29">(6, 3)</td>
+    <td class="tg-wo29">(6, 4)</td>
+    <td class="tg-wo29">(6, 5)</td>
+    <td class="tg-wo29">(6, 6)</td>
+  </tr>
+</tbody>
+</table>
+</center>
+
+## Example 2
+
+- Consider the word TENNESSEE. Suppose we were to randomly select a letter. 
+
+    - What is the sample space?
+        
+    - What is $P(T)$?
+    
+    - What is $P(E)$?
+    
+    - What is $P(N)$?
+    
+    - What is $P(S)$?
+    
+## Example 3
+
+- Set up: split class into various groups.
+
+- Suppose we roll two indistinguishable fair dice. We are interested in the sum of the numbers on the two dice.
+
+    - What does the sample space become?
+    
+    - Does order matter for the experiment? Why or why not?
+    
+    - Let event $A$ be rolling an even sum. What are the outcomes that belong to event $A$? 
+    
+        - What is $P(A)$?
+    
+    - Let event $B$ be rolling a sum that is a prime number. What are the outcomes that belong to event $B$?
+    
+        - What is $P(B)$?
+        
+    - Assign each group an event and have them find the probabilities.
+    
+        - $C$: roll a sum that is an odd sum (bonus: complement rule early :))
+        - $D$: roll a sum that is (strictly) less than 5.
+        
+        - $E$: roll an even sum that is 9 or greater.
+        
+        - etc.
+        
+    - Have one member of each group present the set of outcomes belonging to the event.
+    
+    - Have another member present how to find the probability.
+    
+- *Table of possible outcomes*: 
+
+<center>
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-wo29{border-color:#c0c0c0;text-align:left;vertical-align:top}
+</style>
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-wo29">(1, 1) = 2</th>
+    <th class="tg-wo29">(1, 2) = 3</th>
+    <th class="tg-wo29">(1, 3) = 4</th>
+    <th class="tg-wo29">(1, 4) = 5</th>
+    <th class="tg-wo29">(1, 5) = 6</th>
+    <th class="tg-wo29">(1, 6) = 7</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-wo29">(2, 1) = 3</td>
+    <td class="tg-wo29">(2, 2) = 4</td>
+    <td class="tg-wo29">(2, 3) = 5</td>
+    <td class="tg-wo29">(2, 4) = 6</td>
+    <td class="tg-wo29">(2, 5) = 7  </td>
+    <td class="tg-wo29">(2, 6) = 8</td>
+  </tr>
+  <tr>
+    <td class="tg-wo29">(3, 1) = 4</td>
+    <td class="tg-wo29">(3, 2) = 5</td>
+    <td class="tg-wo29">(3, 3) = 6</td>
+    <td class="tg-wo29">(3, 4) = 7</td>
+    <td class="tg-wo29">(3, 5) = 8</td>
+    <td class="tg-wo29">(3, 6) = 9</td>
+  </tr>
+  <tr>
+    <td class="tg-wo29">(4, 1) = 5</td>
+    <td class="tg-wo29">(4, 2) = 6</td>
+    <td class="tg-wo29">(4, 3) = 7</td>
+    <td class="tg-wo29">(4, 4) = 8</td>
+    <td class="tg-wo29">(4, 5) = 9</td>
+    <td class="tg-wo29">(4, 6) = 10</td>
+  </tr>
+  <tr>
+    <td class="tg-wo29">(5, 1) = 6</td>
+    <td class="tg-wo29">(5, 2) = 7 </td>
+    <td class="tg-wo29">(5, 3) = 8</td>
+    <td class="tg-wo29">(5, 4) = 9</td>
+    <td class="tg-wo29">(5, 5) = 10</td>
+    <td class="tg-wo29">(5, 6) = 11</td>
+  </tr>
+  <tr>
+    <td class="tg-wo29">(6, 1) = 7</td>
+    <td class="tg-wo29">(6, 2) = 8</td>
+    <td class="tg-wo29">(6, 3) = 9</td>
+    <td class="tg-wo29">(6, 4) = 10</td>
+    <td class="tg-wo29">(6, 5) = 11</td>
+    <td class="tg-wo29">(6, 6) = 12</td>
+  </tr>
+</tbody>
+</table>
+</center>
+
+:::
+
+### Addition Rule for Mutually Exclusive Events
+
+::: {.panel-tabset}
+
+## Example 1
+
+- Suppose a single card is drawn from a standard 52-card deck.
+
+    - What is the sample space?
+    
+- Suppose event $A$ is drawing a face card (J, Q, K). 
+
+    - What is $P(A)$?
+    
+- Suppose event $B$ is drawing a black, even card. 
+
+    - What is $P(B)$?
+    
+- Are $A$ and $B$ mutually exclusive events? Why or why not?
+    
+    - What is $P(A \cup B)$?
+    
+*Table of card deck*:
+
+<center>
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-wo29{border-color:#c0c0c0;text-align:left;vertical-align:top}
+</style>
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-wo29"><span style="font-weight:bold">Clubs:</span></th>
+    <th class="tg-wo29">A</th>
+    <th class="tg-wo29">2</th>
+    <th class="tg-wo29">3</th>
+    <th class="tg-wo29">4</th>
+    <th class="tg-wo29">5</th>
+    <th class="tg-wo29">6</th>
+    <th class="tg-wo29">7</th>
+    <th class="tg-wo29">8</th>
+    <th class="tg-wo29">9</th>
+    <th class="tg-wo29">10</th>
+    <th class="tg-wo29">J</th>
+    <th class="tg-wo29">Q</th>
+    <th class="tg-wo29">K</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-wo29"><span style="font-weight:bold">Spades:</span></td>
+    <td class="tg-wo29">A</td>
+    <td class="tg-wo29">2</td>
+    <td class="tg-wo29">3</td>
+    <td class="tg-wo29">4</td>
+    <td class="tg-wo29">5</td>
+    <td class="tg-wo29">6</td>
+    <td class="tg-wo29">7</td>
+    <td class="tg-wo29">8</td>
+    <td class="tg-wo29">9</td>
+    <td class="tg-wo29">10</td>
+    <td class="tg-wo29">J</td>
+    <td class="tg-wo29">Q</td>
+    <td class="tg-wo29">K</td>
+  </tr>
+  <tr>
+    <td class="tg-wo29"><span style="font-weight:bold"><font color = "red">Diamonds:</span></td>
+    <td class="tg-wo29"><font color = "red">A</font></td>
+    <td class="tg-wo29"><font color = "red">2</font></td>
+    <td class="tg-wo29"><font color = "red">3</font></td>
+    <td class="tg-wo29"><font color = "red">4</font></td>
+    <td class="tg-wo29"><font color = "red">5</font></td>
+    <td class="tg-wo29"><font color = "red">6</font></td>
+    <td class="tg-wo29"><font color = "red">7</font></td>
+    <td class="tg-wo29"><font color = "red">8</font></td>
+    <td class="tg-wo29"><font color = "red">9</font></td>
+    <td class="tg-wo29"><font color = "red">10</font></td>
+    <td class="tg-wo29"><font color = "red">J</font></td>
+    <td class="tg-wo29"><font color = "red">Q</font></td>
+    <td class="tg-wo29"><font color = "red">K</font></td>
+  </tr>
+  <tr>
+    <td class="tg-wo29"><span style="font-weight:bold"><font color = "red">Hearts:</span></td>
+    <td class="tg-wo29"><font color = "red">A</font></td>
+    <td class="tg-wo29"><font color = "red">2</font></td>
+    <td class="tg-wo29"><font color = "red">3</font></td>
+    <td class="tg-wo29"><font color = "red">4</font></td>
+    <td class="tg-wo29"><font color = "red">5</font></td>
+    <td class="tg-wo29"><font color = "red">6</font></td>
+    <td class="tg-wo29"><font color = "red">7</font></td>
+    <td class="tg-wo29"><font color = "red">8</font></td>
+    <td class="tg-wo29"><font color = "red">9</font></td>
+    <td class="tg-wo29"><font color = "red">10</font></td>
+    <td class="tg-wo29"><font color = "red">J</font></td>
+    <td class="tg-wo29"><font color = "red">Q</font></td>
+    <td class="tg-wo29"><font color = "red">K</font></td>
+  </tr>
+</tbody>
+</table>
+</center>    
+    
+## Example 2
+
+- Suppose we toss three coins.
+
+    - What is the sample space?
+    
+- Let event $A$ be flipping at least two tails. 
+
+    - What is $P(A)$?
+
+- Let event $B$ be flipping no tails.
+
+    - What is $P(B)$?
+    
+- Let event $C$ be flipping no heads.
+
+    - What is $P(C)$?
+    
+- Are the following events mutually exclusive? Why or why not?
+
+    - $A$ and $B$
+    
+    - $A$ and $C$
+    
+    - $B$ and $C$
+    
+*Sample Space*:
+
+<center>
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-zv4m{border-color:#ffffff;text-align:left;vertical-align:top}
+</style>
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-zv4m">HHH</th>
+    <th class="tg-zv4m"></th>
+    <th class="tg-zv4m"></th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-zv4m">HHT</td>
+    <td class="tg-zv4m">HTH</td>
+    <td class="tg-zv4m">THH</td>
+  </tr>
+  <tr>
+    <td class="tg-zv4m">HTT</td>
+    <td class="tg-zv4m">THT</td>
+    <td class="tg-zv4m">TTH</td>
+  </tr>
+  <tr>
+    <td class="tg-zv4m">TTT</td>
+    <td class="tg-zv4m"></td>
+    <td class="tg-zv4m"></td>
+  </tr>
+</tbody>
+</table>
+</center>
+
+## Example 3
+
+- Set up: split class into various groups.
+
+- Suppose we are rolling two dice: one red, one blue.
+
+- Assign each group an event and have them find the probabilities:
+
+    - $A$: Rolling a red 2.
+    
+    - $B$: Rolling a blue 5.
+    
+    - $C$: Rolling a red odd.
+    
+    - $D$: Rolling a sum that is odd.
+    
+    - $E$: Rolling a sum that is even.
+    
+    - etc.
+    
+- Have groups determine which other groups they are mutually exclusive with.
+
+- Have groups find other groups they are mutually exclusive with and find $P(E_1 \cup E_2)$.
+
+:::
+
+### Examples for the General Addition Rule
+
+::: {.panel-tabset}
+
+## Example 1
+
+- The probability of a teenager owning a Playstation is 0.31, of owning a Switch is 0.56 and of owning both is 0.17. 
+
+    - What are the events that are defined by the problem?
+
+- If a teenager is chosen at random, what is the probability that the teenager owns a Playstation or Switch?
+
+    - What is $P(\text{Playstation})$?
+    
+    - What is $P(\text{Switch})$?
+    
+    - What is $P(\text{Playstation} \cap \text{Switch})$?
+    
+    - What is $P(\text{Playstation} \cup \text{Switch})$?
+    
+- Suggestion: Venn Diagram    
+
+## Example 2
+
+- There are 100 students taking either STA4173 (Biostatistics) or STA4231 (Statistics for Data Science I). 80 students are taking Biostatistics and 30 students are taking Statistics for Data Science I.
+    
+    - What is $P(\text{Biostatistics})$?
+    
+    - What is $P(\text{Statistics for Data Science I})$?
+    
+    - What is $P(\text{Biostatistics} \cap \text{Statistics for Data Science I})$?
+    
+    - What is $P(\text{Biostatistics} \cup \text{Statistics for Data Science I})$?
+    
+- Suggestion: Venn Diagram
+
+## Example 3
+
+- Suppose a single card is drawn from a standard 52-card deck.
+
+    - What is the sample space?
+    
+- Suppose event $A$ is drawing a face card (J, Q, K). 
+
+    - What is $P(A)$?
+    
+- Suppose event $B$ is drawing a red card. 
+
+    - What is $P(B)$?
+    
+- Are $A$ and $B$ mutually exclusive events? Why or why not?
+    
+- What is $P(A \cup B)$?
+
+*Table of card deck*:
+
+<center>
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-wo29{border-color:#c0c0c0;text-align:left;vertical-align:top}
+</style>
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-wo29"><span style="font-weight:bold">Clubs:</span></th>
+    <th class="tg-wo29">A</th>
+    <th class="tg-wo29">2</th>
+    <th class="tg-wo29">3</th>
+    <th class="tg-wo29">4</th>
+    <th class="tg-wo29">5</th>
+    <th class="tg-wo29">6</th>
+    <th class="tg-wo29">7</th>
+    <th class="tg-wo29">8</th>
+    <th class="tg-wo29">9</th>
+    <th class="tg-wo29">10</th>
+    <th class="tg-wo29">J</th>
+    <th class="tg-wo29">Q</th>
+    <th class="tg-wo29">K</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-wo29"><span style="font-weight:bold">Spades:</span></td>
+    <td class="tg-wo29">A</td>
+    <td class="tg-wo29">2</td>
+    <td class="tg-wo29">3</td>
+    <td class="tg-wo29">4</td>
+    <td class="tg-wo29">5</td>
+    <td class="tg-wo29">6</td>
+    <td class="tg-wo29">7</td>
+    <td class="tg-wo29">8</td>
+    <td class="tg-wo29">9</td>
+    <td class="tg-wo29">10</td>
+    <td class="tg-wo29">J</td>
+    <td class="tg-wo29">Q</td>
+    <td class="tg-wo29">K</td>
+  </tr>
+  <tr>
+    <td class="tg-wo29"><span style="font-weight:bold"><font color = "red">Diamonds:</span></td>
+    <td class="tg-wo29"><font color = "red">A</font></td>
+    <td class="tg-wo29"><font color = "red">2</font></td>
+    <td class="tg-wo29"><font color = "red">3</font></td>
+    <td class="tg-wo29"><font color = "red">4</font></td>
+    <td class="tg-wo29"><font color = "red">5</font></td>
+    <td class="tg-wo29"><font color = "red">6</font></td>
+    <td class="tg-wo29"><font color = "red">7</font></td>
+    <td class="tg-wo29"><font color = "red">8</font></td>
+    <td class="tg-wo29"><font color = "red">9</font></td>
+    <td class="tg-wo29"><font color = "red">10</font></td>
+    <td class="tg-wo29"><font color = "red">J</font></td>
+    <td class="tg-wo29"><font color = "red">Q</font></td>
+    <td class="tg-wo29"><font color = "red">K</font></td>
+  </tr>
+  <tr>
+    <td class="tg-wo29"><span style="font-weight:bold"><font color = "red">Hearts:</span></td>
+    <td class="tg-wo29"><font color = "red">A</font></td>
+    <td class="tg-wo29"><font color = "red">2</font></td>
+    <td class="tg-wo29"><font color = "red">3</font></td>
+    <td class="tg-wo29"><font color = "red">4</font></td>
+    <td class="tg-wo29"><font color = "red">5</font></td>
+    <td class="tg-wo29"><font color = "red">6</font></td>
+    <td class="tg-wo29"><font color = "red">7</font></td>
+    <td class="tg-wo29"><font color = "red">8</font></td>
+    <td class="tg-wo29"><font color = "red">9</font></td>
+    <td class="tg-wo29"><font color = "red">10</font></td>
+    <td class="tg-wo29"><font color = "red">J</font></td>
+    <td class="tg-wo29"><font color = "red">Q</font></td>
+    <td class="tg-wo29"><font color = "red">K</font></td>
+  </tr>
+</tbody>
+</table>
+</center>
+
+## Example 4
+
+- Set up: split class into various groups.
+
+- Suppose two cards are drawn without replacement from a standard 52-card deck.
+
+- Assign each group an event and have them find the corresponding probabilities.
+    
+    - $A$: drawing two even cards
+    
+    - $B$: drawing two face cards
+    
+    - $C$: drawing a red 2 and black 3
+    
+    - etc.
+    
+- Have one student from each group present their probabilities.
+        
+- Pair groups together and ask them to find $P(E_1 \cup E_2)$. 
+
+- Have one student from each paired group present their solution.
+
+*Table of card deck*:
+
+<center>
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-wo29{border-color:#c0c0c0;text-align:left;vertical-align:top}
+</style>
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-wo29"><span style="font-weight:bold">Clubs:</span></th>
+    <th class="tg-wo29">A</th>
+    <th class="tg-wo29">2</th>
+    <th class="tg-wo29">3</th>
+    <th class="tg-wo29">4</th>
+    <th class="tg-wo29">5</th>
+    <th class="tg-wo29">6</th>
+    <th class="tg-wo29">7</th>
+    <th class="tg-wo29">8</th>
+    <th class="tg-wo29">9</th>
+    <th class="tg-wo29">10</th>
+    <th class="tg-wo29">J</th>
+    <th class="tg-wo29">Q</th>
+    <th class="tg-wo29">K</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-wo29"><span style="font-weight:bold">Spades:</span></td>
+    <td class="tg-wo29">A</td>
+    <td class="tg-wo29">2</td>
+    <td class="tg-wo29">3</td>
+    <td class="tg-wo29">4</td>
+    <td class="tg-wo29">5</td>
+    <td class="tg-wo29">6</td>
+    <td class="tg-wo29">7</td>
+    <td class="tg-wo29">8</td>
+    <td class="tg-wo29">9</td>
+    <td class="tg-wo29">10</td>
+    <td class="tg-wo29">J</td>
+    <td class="tg-wo29">Q</td>
+    <td class="tg-wo29">K</td>
+  </tr>
+  <tr>
+    <td class="tg-wo29"><span style="font-weight:bold"><font color = "red">Diamonds:</span></td>
+    <td class="tg-wo29"><font color = "red">A</font></td>
+    <td class="tg-wo29"><font color = "red">2</font></td>
+    <td class="tg-wo29"><font color = "red">3</font></td>
+    <td class="tg-wo29"><font color = "red">4</font></td>
+    <td class="tg-wo29"><font color = "red">5</font></td>
+    <td class="tg-wo29"><font color = "red">6</font></td>
+    <td class="tg-wo29"><font color = "red">7</font></td>
+    <td class="tg-wo29"><font color = "red">8</font></td>
+    <td class="tg-wo29"><font color = "red">9</font></td>
+    <td class="tg-wo29"><font color = "red">10</font></td>
+    <td class="tg-wo29"><font color = "red">J</font></td>
+    <td class="tg-wo29"><font color = "red">Q</font></td>
+    <td class="tg-wo29"><font color = "red">K</font></td>
+  </tr>
+  <tr>
+    <td class="tg-wo29"><span style="font-weight:bold"><font color = "red">Hearts:</span></td>
+    <td class="tg-wo29"><font color = "red">A</font></td>
+    <td class="tg-wo29"><font color = "red">2</font></td>
+    <td class="tg-wo29"><font color = "red">3</font></td>
+    <td class="tg-wo29"><font color = "red">4</font></td>
+    <td class="tg-wo29"><font color = "red">5</font></td>
+    <td class="tg-wo29"><font color = "red">6</font></td>
+    <td class="tg-wo29"><font color = "red">7</font></td>
+    <td class="tg-wo29"><font color = "red">8</font></td>
+    <td class="tg-wo29"><font color = "red">9</font></td>
+    <td class="tg-wo29"><font color = "red">10</font></td>
+    <td class="tg-wo29"><font color = "red">J</font></td>
+    <td class="tg-wo29"><font color = "red">Q</font></td>
+    <td class="tg-wo29"><font color = "red">K</font></td>
+  </tr>
+</tbody>
+</table>
+</center>
+
+:::
+
+
+
