@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Bayesian Thinking - Prediction using Posterior</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Bayesian Thinking</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html" rel="" target="">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../about.html" rel="" target="">
+ <span class="menu-text">About</span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools ms-auto">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Prediction using Posterior</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p><strong>Objectives</strong>:</p>
+<ul>
+<li><p>Understand and implement the concept of posterior predictive power in Bayesian Statistics using Markov Chain values.</p></li>
+<li><p>Learn to use R and relevant libraries (e.g., <em>Stan</em>, <em>bayesian</em> and <em>ggplot2</em>) to approximate posterior predictive power.</p></li>
+<li><p>Apply the concept to real-world examples from the medical field.</p></li>
+</ul>
+<p><strong>Materials Needed:</strong></p>
+<ul>
+<li><p>RStudio or any R environment</p></li>
+<li><p>R packages: <em>rstan</em>, <em>bayesian</em>, <em>ggplot2</em></p></li>
+<li><p>Example medical datasets (e.g., clinical trial results, patient outcomes)</p></li>
+</ul>
+<p><strong>Introduction:</strong></p>
+<ul>
+<li><p>Recap Bayesian Statistics basics, emphasizing posterior distribution.</p></li>
+<li><p>Introduce the concept of posterior predictive power and its importance in model assessment.</p></li>
+<li><p>Briefly explain Markov Chain values and their role in Bayesian modeling.</p></li>
+</ul>
+<p><strong>Markov Chain Monte Carlo (MCMC) and Bayesian Modeling:</strong></p>
+<ul>
+<li><p>Provide an overview of Markov Chain Monte Carlo methods.</p></li>
+<li><p>Discuss Bayesian modeling using <em>R</em>, highlighting the <em>rstan</em> package.</p></li>
+<li><p>Demonstrate the process of obtaining samples from the posterior distribution.</p></li>
+</ul>
+<p><strong>Posterior Predictive Power:</strong></p>
+<ul>
+<li><p>Define posterior predictive power and distinguish between prior and posterior predictive checks.</p></li>
+<li><p>Emphasize the need for assessing the model’s ability to generate new data.</p></li>
+<li><p>Discuss the limitations of relying solely on parameter estimates.</p></li>
+</ul>
+<p><strong>Using Markov Chain Values:</strong></p>
+<ul>
+<li><p>Walk through the steps of using Markov Chain values to approximate posterior predictive power.</p></li>
+<li><p>Provide R code snippets for extracting Markov Chain values using <em>rstan</em>.</p></li>
+<li><p>Illustrate the importance of visualizing the posterior predictive distribution.</p></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example R code for using Markov Chain values to approximate posterior predictive power</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Install and load necessary packages</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages(c("rstan", "bayesian", "ggplot2"))</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># library(rstan)</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># library(bayesian)</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># library(ggplot2)</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Load your medical dataset (replace "your_data.csv" with the actual file name)</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># data &lt;- read.csv("your_data.csv")</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the Bayesian model using Stan</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co"># stan_code &lt;- "</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co"># data {</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co"># int&lt;lower=0&gt; N;</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Include your data variables here</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Example: real y[N];</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="co"># }</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="co"># parameters {</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Include your model parameters here</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Example: real mu;</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="co"># }</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="co"># model {</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Include your prior and likelihood specifications here</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Example: y ~ normal(mu, sigma);</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="co"># }</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="co"># generated quantities {</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a> <span class="co"># Simulate new data points using posterior samples</span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a> <span class="co"># Example: real y_pred[N];</span></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a> <span class="co"># for (i in 1:N) {</span></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a> <span class="co"># y_pred[i] = normal_rng(mu, sigma);</span></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a> <span class="co"># }</span></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="co"># }</span></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a><span class="co"># Compile the Stan model</span></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="co"># stan_model &lt;- stan_model(model_code = stan_code)</span></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit the model to your data</span></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a><span class="co"># stan_fit &lt;- sampling(stan_model, data = list(N = nrow(data), y = data$your_variable))</span></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract Markov Chain values</span></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a><span class="co"># chain_values &lt;- as.matrix(stan_fit)</span></span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualize posterior predictive distribution</span></span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a><span class="co"># posterior_predictive &lt;- bayesian::extract_posterior_predictive(stan_fit)</span></span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a><span class="co"># ggplot(data, aes(x = your_variable)) +</span></span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a><span class="co">#  geom_density() +</span></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a><span class="co">#  geom_density(data = posterior_predictive, aes(y = ..scaled..), color = "blue", alpha = 0.5) +</span></span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a><span class="co"># labs(title = "Posterior Predictive Distribution", x = "Your Variable")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Example from the Medical Field:</strong></p>
+<ul>
+<li><p>Introduce a medical dataset and guide participants through the process of building a Bayesian model.</p></li>
+<li><p>Discuss model assessment and emphasize the use of Markov Chain values.</p></li>
+<li><p>Provide hands-on exercises for participants to implement the concepts using their own medical datasets.</p></li>
+</ul>
+<p><strong>Hands-On Exercise:</strong></p>
+<ul>
+<li><p>Students will work on a provided medical dataset or bring their own.</p></li>
+<li><p>Instructor will guide students through building a Bayesian model, obtaining Markov Chain values, and assessing posterior predictive power.</p></li>
+<li><p>Encourage discussion and troubleshooting.</p></li>
+</ul>
+<p><strong>Conclusion:</strong></p>
+<ul>
+<li><p>Recap key points about Bayesian modeling, posterior predictive power, and the use of Markov Chain values in R.</p></li>
+<li><p>Discuss the relevance and applications of these techniques in the medical field.</p></li>
+<li><p>Encourage participants to explore additional resources for further learning.</p></li>
+</ul>
+<p><strong>Assessment:</strong></p>
+<ul>
+<li>Evaluate students’ understanding through class participation, engagement in the hands-on exercise, and the quality of their interpretations of posterior predictive power in the medical context.</li>
+</ul>
+<hr>
+<p><strong>Additional Notes</strong></p>
+<p><strong>Posterior Predictive Power</strong></p>
+<p>Posterior predictive power is a concept in Bayesian statistics that involves assessing the ability of a statistical model to generate new data that is consistent with observed data. It is a crucial aspect of model assessment in Bayesian statistics, as it goes beyond simply fitting a model to observed data and focuses on the model’s ability to make predictions for future or unseen data.</p>
+<p>Here’s a breakdown of the key components:</p>
+<p><strong><em>Posterior Predictive Distribution</em></strong>:</p>
+<p>In Bayesian statistics, the posterior predictive distribution is obtained by combining the likelihood function (which describes how well the model explains the observed data) with the posterior distribution of the model parameters (updated beliefs about parameters based on both prior information and the observed data). Mathematically, it is expressed as:</p>
+<ul>
+<li>P(future data∣observed data)</li>
+</ul>
+<p>=∫P(future data∣parameters)⋅(parameters∣observed data) P(parameters</p>
+<ul>
+<li><p>P(future data∣observed data)=∫P(future data∣parameters)⋅P(parameters∣observed data) d parameters</p></li>
+<li><p>This distribution represents the model’s prediction for future data given the observed data.</p>
+<p><strong><em>Posterior Predictive Power</em></strong>:</p></li>
+<li><p>Posterior predictive power is a measure of how well the model’s predictions align with new, unseen data. It helps evaluate the model’s ability to generalize beyond the observed data.</p></li>
+</ul>
+<!-- -->
+<ul>
+<li><p>It can be assessed using various measures, such as predictive accuracy, calibration, and other model performance metrics.</p>
+<p><strong><em>Importance in Model Assessment</em></strong>:</p>
+<ul>
+<li><p>Model fitting alone does not guarantee that a model will perform well on new data. Posterior predictive power provides a more comprehensive evaluation by considering both the fit to observed data and the model’s predictive capabilities.</p></li>
+<li><p>It helps identify whether the model is overfitting (fitting noise in the data rather than capturing underlying patterns) or underfitting (oversimplifying the data).</p></li>
+</ul>
+<p><strong>Examples from the Medical Field</strong>:</p>
+<ul>
+<li><p><strong><em>Clinical Trials</em></strong>: In medical research, Bayesian models are often used to analyze clinical trial data. Posterior predictive power can be employed to assess how well the model predicts patient outcomes or responses to treatment in new trials.</p></li>
+<li><p><strong><em>Diagnostic Models</em></strong>: For medical diagnostic models, posterior predictive power can be used to evaluate how well the model predicts outcomes for patients not included in the initial dataset. This is crucial for assessing the model’s generalizability in real-world scenarios.</p></li>
+<li><p><strong><em>Epidemiological Models</em></strong>: Bayesian models are used in epidemiology to understand disease spread and predict future outbreaks. Posterior predictive power helps assess the reliability of these models in forecasting the dynamics of infectious diseases.</p></li>
+<li><p><strong><em>Health Outcome Predictions</em></strong>: In personalized medicine, Bayesian models can be used to predict individual health outcomes based on genetic, clinical, and environmental factors. Posterior predictive power is essential to evaluate the accuracy of these predictions.</p></li>
+</ul></li>
+</ul>
+<p>In summary, posterior predictive power in Bayesian statistics provides a robust framework for assessing the overall performance of models, especially in fields like medicine where accurate predictions are crucial for patient well-being and decision-making.</p>
+<section id="markov-chain-monte-carlo-mcmc" class="level4">
+<h4 class="anchored" data-anchor-id="markov-chain-monte-carlo-mcmc"><strong>Markov Chain Monte Carlo (MCMC):</strong></h4>
+<p>MCMC is a class of algorithms used for sampling from complex probability distributions, which is often encountered in Bayesian statistical inference. The primary goal is to generate samples from the posterior distribution of model parameters given observed data. The central idea is to construct a Markov Chain that, when run for a sufficiently long time, converges to the target posterior distribution.</p>
+</section>
+<section id="markov-chain-values-and-their-role" class="level4">
+<h4 class="anchored" data-anchor-id="markov-chain-values-and-their-role"><strong>Markov Chain Values and Their Role:</strong></h4>
+<ul>
+<li><p>Markov Property:</p>
+<ul>
+<li><p>A Markov Chain is a sequence of random variables where the probability distribution of each variable depends only on the preceding variable. This is known as the Markov property.</p></li>
+<li><p>In the context of MCMC, Markov Chains are constructed to explore the parameter space of a Bayesian model. Each value in the chain represents a set of parameter values.</p></li>
+</ul></li>
+<li><p><strong>Sampling from the Posterior:</strong></p>
+<ul>
+<li>MCMC methods generate a sequence of parameter values from the posterior distribution. Each value in the Markov Chain is a sample from the posterior, and the chain is constructed in a way that it explores the high-probability regions of the parameter space.</li>
+</ul></li>
+<li><p><strong>Convergence and Mixing:</strong></p>
+<ul>
+<li><p>The quality of MCMC sampling depends on the convergence and mixing properties of the Markov Chain.</p></li>
+<li><p>Convergence ensures that the chain has reached a stationary distribution, and further samples provide information about the target posterior.</p></li>
+<li><p>Mixing refers to how effectively the chain explores the parameter space. A well-mixing chain moves easily between different regions of high posterior probability.</p></li>
+</ul></li>
+<li><p><strong>Trace Plots and Diagnostics</strong>:</p>
+<ul>
+<li><p>Practitioners often examine trace plots, which show the values of parameters in the Markov Chain over iterations. These plots help assess convergence and identify potential issues.</p></li>
+<li><p>Diagnostic tools, such as the Gelman-Rubin statistic, effective sample size, and autocorrelation plots, are used to evaluate the quality of the Markov Chain values.</p></li>
+</ul></li>
+<li><p><strong>Inference and Uncertainty Quantification</strong>:</p>
+<ul>
+<li><p>Once a well-behaved Markov Chain is obtained, the values in the chain can be used for Bayesian inference.</p></li>
+<li><p>Posterior summaries, such as mean, median, and credible intervals, can be computed from the Markov Chain values to quantify uncertainty in parameter estimates.</p></li>
+</ul></li>
+<li><p><strong>Bayesian Updating</strong>:</p>
+<ul>
+<li>In a Bayesian framework, new data can be incorporated by updating the Markov Chain using the posterior distribution based on the observed data. This allows for iterative learning and model refinement.</li>
+</ul></li>
+</ul>
+</section>
+<section id="example" class="level4">
+<h4 class="anchored" data-anchor-id="example"><strong>Example:</strong></h4>
+<p>Consider a Bayesian linear regression model with unknown parameters 0 and 1. MCMC methods could generate a Markov Chain of values for&nbsp; 0 and 1based on observed data. The chain’s convergence and mixing properties, as well as the distribution of values in the chain, provide insights into the uncertainty associated with the parameter estimates.</p>
+<p>In summary, Markov Chain values are the backbone of MCMC algorithms, enabling Bayesian practitioners to sample from complex posterior distributions, conduct inference, and quantify uncertainty in model parameters.</p>
+<p><strong>The RStan Package</strong></p>
+<p>RStan is an R interface to Stan, which is a probabilistic programming language for Bayesian statistical modeling and high-performance statistical computation. RStan allows users to specify Bayesian models using the Stan language and then perform Bayesian inference using Markov Chain Monte Carlo (MCMC) methods. Keep in mind that software packages may have undergone updates or changes since then, so it’s a good idea to check for the latest information.</p>
+<p>Here’s a general overview of the RStan package and its main functionalities:</p>
+<ul>
+<li><p><strong>Installation</strong>:</p>
+<ul>
+<li>To use RStan, you need to install both RStan and the Stan software. Instructions for installation can be found on the official RStan website.</li>
+</ul></li>
+<li><p><strong>Model Specification</strong>:</p>
+<ul>
+<li>RStan allows users to specify Bayesian models using the Stan modeling language. Stan provides a flexible and expressive language for defining hierarchical models, specifying priors, likelihoods, and performing Bayesian inference.</li>
+</ul></li>
+<li><p><strong>Compilation</strong>:</p>
+<ul>
+<li>Once the Stan model is defined in R, it needs to be compiled. RStan facilitates the compilation process, translating the Stan model code into C++ code for efficient computation.</li>
+</ul></li>
+<li><p><strong>Sampling and Inference</strong>:</p>
+<ul>
+<li>RStan uses MCMC algorithms, particularly the No-U-Turn Sampler (NUTS), for sampling from the posterior distribution of model parameters. Users can control the sampling process, such as the number of iterations and chains, through RStan functions.</li>
+</ul></li>
+</ul>
+<!-- -->
+<ul>
+<li><p><strong>Posterior Analysis</strong>:</p>
+<ul>
+<li>After sampling, RStan provides tools for posterior analysis. Users can examine trace plots, summary statistics, and other diagnostics to assess the convergence and performance of the Markov Chain.</li>
+</ul></li>
+<li><p>Visualization:</p>
+<ul>
+<li>RStan includes functions for visualizing results, such as posterior density plots, trace plots, and other diagnostic plots to aid in model assessment.</li>
+</ul></li>
+<li><p>Integration with R Ecosystem:</p>
+<ul>
+<li>RStan seamlessly integrates with the broader R ecosystem, allowing users to leverage R’s extensive capabilities for data manipulation, visualization, and reporting.</li>
+</ul></li>
+<li><p>Parallelization:</p>
+<ul>
+<li>RStan supports parallelization, allowing users to run multiple chains in parallel for faster computation.</li>
+</ul></li>
+</ul>
+<p>Here’s a simple example of how you might use RStan to fit a Bayesian linear regression model:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install and load the RStan package</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("rstan")</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># library(rstan)</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the Stan model</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># stan_code &lt;- "</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># data {</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co">#  int&lt;lower=0&gt; N; # Number of observations</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co">#  vector[N] x; # Predictor variable</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co">#  vector[N] y; # Response variable</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co"># }</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co"># parameters {</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co">#  real alpha; # Intercept</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="co">#  real beta; # Slope</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="co">#  real&lt;lower=0&gt; sigma; # Standard deviation of the errors</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="co"># }</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="co"># model {</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="co">#  y ~ normal(alpha + beta * x, sigma); # Likelihood</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="co"># }</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="co">#  Additional blocks for priors and other specifications can be added</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Compile the Stan model</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="co"># stan_model &lt;- stan_model(model_code = stan_code)</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Create data list</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="co"># data_list &lt;- list(N = length(data$y), x = data$x, y = data$y)</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Run MCMC sampling</span></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="co"># stan_fit &lt;- sampling(stan_model, data = data_list, iter = 2000, chains = 4)</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Print summary</span></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a><span class="co"># print(stan_fit)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
