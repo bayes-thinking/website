@@ -1,0 +1,293 @@
+---
+title: "Examples for Normal-Normal"
+format: 
+  html:
+    embed-resources: true
+execute:
+  echo: true
+  warning: false
+  message: false
+  error: true
+editor: source  
+---
+
+```{r}
+library(bayesrules)
+library(tidyverse)
+```
+
+## The Normal Model
+
+Recall the normal model,
+
+$$f(y) = \frac{1}{\sqrt{2\pi\sigma^2}} \exp\left\{-\frac{\left(y - \mu\right)^2}{2\sigma^2} \right\}$$
+
+where $y$ is a continuous random variable that can take any value in $\mathbb{R}$; i.e., $Y \in \left(-\infty, \infty\right)$.
+
+Suppose we have $n$ observations, then the joint distribution is given by
+
+$$f(\overset{\to}{y}|\mu) = \prod_{i=1}^n f(y_i|\mu) = \prod_{i=1}^n \frac{1}{\sqrt{2\pi\sigma^2}} \exp\left\{-\frac{\left(y_i - \mu\right)^2}{2\sigma^2} \right\}$$
+
+Then the likelihood is given by,
+
+$$
+\begin{align*}
+L(\mu| \overset{\to}{y}) &\propto \prod_{i=1}^n \exp\left\{-\frac{\left(y_i - \mu\right)^2}{2\sigma^2} \right\} = \exp\left\{-\frac{\sum_{i=1}^n \left(y_i - \mu\right)^2}{2\sigma^2} \right\} \\
+&\propto \exp\left\{-\frac{\left(\bar{y} - \mu\right)^2}{2\sigma^2/n} \right\} 
+\end{align*}
+$$
+
+## The Normal-Normal Model
+
+- Let $\mu \in (-\infty, \infty)$ be an unknown mean parameter and $(Y_1, Y_2, ..., Y_n)$ be an independent $N(\mu, \sigma^2)$, where $\sigma$ is assumed to be known.
+
+- The Normal-Normal Bayesian model has Normal distributions for both prior and data. The Normal prior is on the unknown mean, $\mu$.
+
+$$Y_i | \mu \overset{\text{ind}}{\sim} N(\mu, \sigma^2)$$
+
+$$\mu \sim N(\theta, \tau^2)$$
+
+- When we have data $\overset{\to}{y} = (y_1, ..., y_n)$ with mean $\bar{y}$, the posterior distribution for $\mu$ is also Normal with updated parameters,
+
+$$\mu|\overset{\to}{y} \sim N\left( \theta \frac{\sigma^2}{n\tau^2 + \sigma^2} + \bar{y} \frac{n\tau^2}{n\tau^2+\sigma^2}, \frac{\tau^2 \sigma^2}{n\tau^2 + \sigma^2} \right)$$
+
+::: {.panel-tabset}
+
+## Example 1a
+
+- Let’s apply this! Consider analysis of  $\mu$, the average hippocampal volume among people that have a history of concussions.
+
+- First, let's derive the prior distribution. From the textbook, we can reasonably assume that the hippocampal volumes of our $n=25$ subjects,  $\overset{\to}{Y_i} = (y_1, ..., y_n)$, are independent and normally distributed around a mean volume, $\mu$, with standard deviation $\sigma$. 
+
+- We don’t have prior information about this very specific group, however, Wikipedia tells us that among the general population of human adults, each half of the hippocampus has a volume between 3.0 and 3.5 cm^3^ $\to$ the total hippocampal volume of both sides of the brain is between 6 and 7 cm^3^.
+
+- Because $\sigma$ is a nuisance parameter, we’ll assume that the standard deviation is known to be  $\sigma=0.5$ cm^3^. 
+
+- What is the prior distribution in mathematical notation?
+
+- Graph the prior distribution, below:
+
+```{r ex1a_a}
+
+```
+
+- Import the `FootballBrain` data from the `Lock5Data` package.
+
+```{r ex1a_b}
+
+```
+
+- Only include those that have a history of concussions (*fb_concuss*).
+
+```{r ex1a_c}
+
+```
+
+- What is the average hippocampal volume (*volume*) of those that have a history of concussions?
+
+```{r ex1a_d}
+
+```
+
+- Construct the density plot for the hippocampal volume (*volume*)
+
+```{r ex1a_e}
+
+```
+
+- Does the normal distribution seem reasonable to use here?
+
+- Plot the Normal-Normal model using the `plot_normal_normal()` function from the `bayesrules` package.
+
+```{r ex1a_f}
+
+```
+
+- Run the `summarize_normal_normal()` function from the `bayesrules` package.
+
+```{r ex1a_g}
+
+```
+
+## Example 1b
+
+- Let's now explore those that did not have prior concussions.
+
+- Re-import the `FootballBrain` data from the `Lock5Data` package.
+
+```{r ex1b_a}
+
+```
+
+- Only include those that do not have a history of concussions (*fb_no_concuss*).
+
+```{r ex1b_b}
+
+```
+
+- Find the average mean hippocampal volume and sample size of the control subjects who have not been diagnosed with a concussion.
+
+```{r ex1b_c}
+
+```
+
+- Find the posterior model of $\mu$ using `summarize_normal_normal()` from the `bayesrules` package.
+
+```{r ex1b_d}
+
+```
+
+- Plot the Normal-Normal model using the `plot_normal_normal()` function from the `bayesrules` package.
+
+```{r ex1b_f}
+
+```
+
+
+:::
+
+::: {.panel-tabset}
+
+## Example 2a
+
+- Suppose you just bought stock in Mojo's Bakery. Let $\mu$ be a random variable that represents the average dollar amount that your stock in Mojo's Bakery goes up or down in a one-day period. 
+
+- You believe that $\mu=8.7$ dollars with a standard deviation of $2.9$ dollars is a reasonable starting point.
+
+- Plot the appropriate Normal prior model for $\mu$.
+
+```{r ex2a_a}
+
+```
+
+- Does it seem plausible that the stock would increase by an average of 9.1 dollars in one day?
+
+- Does it seem plausible that the stock would increase by an average of 5 dollars in one day?
+
+- What is the prior probability that, on average, the stock price *decreases*?
+
+```{r ex2a_b}
+
+```
+
+- What is the prior probability that, on average, the stock price increases by more than 9.5 dollars per day?
+
+```{r ex2a_c}
+
+```
+
+## Example 2b
+
+- Suppose we assume that the daily changes in Mojo's Bakery stock are normally distributed around an unknown mean of $\mu$ with a known standard deviation of $\sigma=2$ dollars.
+
+- On a random sample of 4 days, you observe changes in stock value of --0.6, 1.8, 3.9, and --4.1 dollars.
+
+- Plot the corresponding likelihood function of $\mu$.
+
+```{r ex2b_a}
+
+```
+
+- Plot the Normal-Normal model using the `plot_normal_normal()` function from the `bayesrules` package.
+
+```{r ex2b_b}
+
+```
+
+- Use `summarize_normal_normal()` from the `bayesrules` package to calculate descriptive statistics for the prior and posterior models.
+
+```{r ex2b_c}
+
+```
+
+- What is the posterior probability that, on average, the stock price goes down?
+
+```{r ex2b_d}
+
+```
+
+- What is the posterior probability that, on average, the stock price goes up by more than 9.5 dollars per day?
+
+```{r ex2b_e}
+
+```
+
+## Example 2c
+
+- Suppose we assume that the daily changes in Mojo's Bakery stock are normally distributed around an unknown mean of $\mu$ with a known standard deviation of $\sigma=1$ dollars.
+
+- On a random sample of 4 days, you observe changes in stock value of --0.6, 1.8, 3.9, and --4.1 dollars.
+
+- Plot the corresponding likelihood function of $\mu$.
+
+```{r ex2c_a}
+
+```
+
+- Plot the Normal-Normal model using the `plot_normal_normal()` function from the `bayesrules` package.
+
+```{r ex2c_b}
+
+```
+
+- Use `summarize_normal_normal()` from the `bayesrules` package to calculate descriptive statistics for the prior and posterior models.
+
+```{r ex2c_c}
+
+```
+
+- What is the posterior probability that, on average, the stock price goes down?
+
+```{r ex2c_d}
+
+```
+
+- What is the posterior probability that, on average, the stock price goes up by more than 9.5 dollars per day?
+
+```{r ex2c_e}
+
+```
+
+## Example 2d
+
+- Suppose we assume that the daily changes in Mojo's Bakery stock are normally distributed around an unknown mean of $\mu$ with a known standard deviation of $\sigma=3$ dollars.
+
+- On a random sample of 4 days, you observe changes in stock value of --0.6, 1.8, 3.9, and --4.1 dollars.
+
+- Plot the corresponding likelihood function of $\mu$.
+
+```{r ex2d_a}
+
+```
+
+- Plot the Normal-Normal model using the `plot_normal_normal()` function from the `bayesrules` package.
+
+```{r ex2d_b}
+
+```
+
+- Use `summarize_normal_normal()` from the `bayesrules` package to calculate descriptive statistics for the prior and posterior models.
+
+```{r ex2d_c}
+
+```
+
+- What is the posterior probability that, on average, the stock price goes down?
+
+```{r ex2d_d}
+
+```
+
+- What is the posterior probability that, on average, the stock price goes up by more than 9.5 dollars per day?
+
+```{r ex2d_e}
+
+```
+
+:::
+
+
+
+
+
+

@@ -2,16 +2,23 @@
 format: html
 ---
 
-| Topic                      | Notes | Examples |
+| Topic                      | Lecture Notes | In Class Notes for Students |
 |----------------------------|-------|----------|
-| Introduction to Technology |       |          |
-| Probability                | [part 1 lesson plan](https://github.com/bayes-thinking/website/blob/main/instructors/1-0-probability-1-lesson-plan.qmd), [part 2 lesson plan](https://github.com/bayes-thinking/website/blob/main/instructors/2-0-probability-2-lesson-plan.qmd) |          |
-| Probability Distributions  |       |          |
-| Bayes Theorem              |       |          |
-| Distributions: Priors      | [lesson plan](https://github.com/bayes-thinking/website/blob/main/instructors/4-0-priors-lesson-plan.qmd) |          |
-| Distributions: Data        |       |          |
-| Beta-Binomial              |       |          |
-| Normal-Normal              | [lesson plan](https://github.com/bayes-thinking/website/blob/main/instructors/7-0-normal-normal-lesson-plan.qmd)      |          |
-| MCMC       |       |          |
-| Gibbs Sampler       |       |          |
-| Predictions                |       |          |
+| Probability                | [part 1 lesson plan](https://github.com/bayes-thinking/website/blob/main/instructors/1-0-probability-1-lesson-plan.qmd), [part 2 lesson plan](https://github.com/bayes-thinking/website/blob/main/instructors/2-0-probability-2-lesson-plan.qmd) |  [part 1 examples](https://github.com/bayes-thinking/website/blob/main/examples/1-1-probability-in-class-examples.qmd), [part 2 examples](https://github.com/bayes-thinking/website/blob/main/examples/2-1-probability-in-class-examples.qmd)         |
+| Probability Distributions  | [lesson plan](https://github.com/bayes-thinking/website/blob/main/instructors/3-0-probability-distribution-lesson-plan.qmd)      |   [examples](https://github.com/bayes-thinking/website/blob/main/examples/3-1-probability-distribution-in-class-examples.qmd)       |
+| Bayes Theorem              |  [lesson plan](https://github.com/bayes-thinking/website/blob/main/instructors/4-0-Bayes-theorem-lesson-plan.qmd)     |    [examples](https://github.com/bayes-thinking/website/blob/main/examples/4-1-Bayes-theorem-in-class-examples.qmd)      |
+| Distributions: Priors      | [lesson plan](https://github.com/bayes-thinking/website/blob/main/instructors/5-0-priors-lesson-plan.qmd) |  [examples](https://github.com/bayes-thinking/website/blob/main/examples/5-1-priors-in-class-examples.qmd)        |
+| Distributions: Data        | [lesson plan](https://github.com/bayes-thinking/website/blob/main/instructors/6-0-likelihood-lesson-plan.qmd)      |    [examples](https://github.com/bayes-thinking/website/blob/main/examples/6-1-likelihood-in-class-examples.qmd)      |
+| Beta-Binomial              |  [lesson plan](https://github.com/bayes-thinking/website/blob/main/instructors/7-0-beta-binomial-lesson-plan.qmd)     | [examples](https://github.com/bayes-thinking/website/blob/main/examples/7-1-beta-binomial-in-class-examples.qmd)         |
+| Normal-Normal              | [lesson plan](https://github.com/bayes-thinking/website/blob/main/instructors/8-0-normal-normal-lesson-plan.qmd)      |  [examples](https://github.com/bayes-thinking/website/blob/main/examples/8-1-normal-normal-in-class-examples.qmd)         |
+| MCMC       | [lesson plan](https://github.com/bayes-thinking/website/blob/main/instructors/9-0-MCMC-lesson-plan.qmd)      |  [examples](https://github.com/bayes-thinking/website/blob/main/examples/9-1-MCMC-in-class-examples.qmd)         |
+| Gibbs Sampler       | [lesson plan](https://github.com/bayes-thinking/website/blob/main/instructors/10-0-Gibbs-sampler-lesson-plan.qmd)      |   [examples](https://github.com/bayes-thinking/website/blob/main/examples/10-1-Gibbs-sampler-in-class-examples.qmd)        |
+| Posterior Predictions                |  [lesson plan](https://github.com/bayes-thinking/website/blob/main/instructors/11-0-posterior-prediction-lesson-plan.qmd)     |    [examples](https://github.com/bayes-thinking/website/blob/main/examples/11-1-posterior-prediction-in-class-examples.qmd)       |
+
+
+<!-- | Introduction to Technology | [lesson plan](https://github.com/bayes-thinking/website/blob/main/instructors/1-0-probability-1-lesson-plan.qmd)    |          | [examples](https://github.com/bayes-thinking/website/blob/main/instructors/1-0-probability-1-lesson-plan.qmd)  -->
+
+**Lecture Notes** are intended for instructors and contain information about the topic.
+
+**In Class Notes for Students** are notes skeletons for students to actively engage with the programming aspect during lecture. 
+

@@ -4,8 +4,7 @@ format: html
 
 ## About this Site
 
-This website is intended to help instructors introduce their students to Bayesian thinking.  
-
+In Tier 2 of the Bayes BATS program, we created lesson plans for instructors appropriate for the advanced undergraduate or applied graduate level. This website outlines a Bayesian course of that nature.  As  collaboration continues, skeleton notes for students to participate in the programming aspect of the course will be added. Please keep checking back as this website will continually be updated as the instructors teach Bayesian courses and receive feedback from others. (Last updated January 15, 2024.)
 
 ## About the Authors
 
@@ -14,6 +13,11 @@ Dr. Abraham Ayebo is an Associate Professor in the Center for Learning Innovatio
 [Dr. Samantha Seals](https://github.com/samanthaseals/) is an Associate Professor of Statistics in the Department of Mathematics and Statistics at the University of West Florida. Dr. Seals teaches upper-division and graduate statistics, biostatistics, and data science courses. She can be reached at sseals at uwf dot edu.
 
 Dr. Toni Sorrell is an Associate Professor of Math Education in the Department of Mathematics and Computer Science Department at Longwood University. She can be reached at sorrelltp at longwood dot edu.
+
+## Courses Using This Content
+
+- [Applied Bayesian Analysis Spring 2024](https://github.com/samanthaseals/STA6990-Bayes) (Dr. Seals)
+- Bayesian Statistics Spring 2024 (Dr. Ayebo)
 
 
 ## Funding
