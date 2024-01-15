@@ -1,83 +1,115 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://bayes-thinking.github.io/website/examples/2-1-probability-in-class-examples.html</loc>
-    <lastmod>2024-01-15T21:54:04.411Z</lastmod>
+    <loc>https://bayes-thinking.github.io/website/examples/4-1-Bayes-theorem-in-class-examples.html</loc>
+    <lastmod>2024-01-15T22:26:20.045Z</lastmod>
   </url>
   <url>
-    <loc>https://bayes-thinking.github.io/website/examples/5-1-priors-in-class-examples.html</loc>
-    <lastmod>2024-01-15T21:54:01.016Z</lastmod>
+    <loc>https://bayes-thinking.github.io/website/examples/6-1-likelihood-in-class-examples.html</loc>
+    <lastmod>2024-01-15T22:26:17.536Z</lastmod>
+  </url>
+  <url>
+    <loc>https://bayes-thinking.github.io/website/examples/7-1-beta-binomial-in-class-examples.html</loc>
+    <lastmod>2024-01-15T22:26:15.267Z</lastmod>
+  </url>
+  <url>
+    <loc>https://bayes-thinking.github.io/website/examples/0-0-placeholder.html</loc>
+    <lastmod>2024-01-15T22:25:42.257Z</lastmod>
+  </url>
+  <url>
+    <loc>https://bayes-thinking.github.io/website/examples/3-1-probability-distribution-in-class-examples.html</loc>
+    <lastmod>2024-01-15T22:25:40.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://bayes-thinking.github.io/website/examples/11-1-posterior-prediction-in-class-examples.html</loc>
+    <lastmod>2024-01-15T22:25:37.202Z</lastmod>
   </url>
   <url>
     <loc>https://bayes-thinking.github.io/website/lectures.html</loc>
-    <lastmod>2024-01-15T21:53:57.784Z</lastmod>
+    <lastmod>2024-01-15T22:25:34.461Z</lastmod>
   </url>
   <url>
-    <loc>https://bayes-thinking.github.io/website/instructors/6-0-likelihood.html</loc>
-    <lastmod>2024-01-15T21:53:57.357Z</lastmod>
+    <loc>https://bayes-thinking.github.io/website/instructors/11-0-posterior-prediction-lesson-plan.html</loc>
+    <lastmod>2024-01-15T22:25:34.032Z</lastmod>
   </url>
   <url>
     <loc>https://bayes-thinking.github.io/website/instructors/8-0-normal-normal-lesson-plan.html</loc>
-    <lastmod>2024-01-15T21:53:55.154Z</lastmod>
+    <lastmod>2024-01-15T22:25:32.252Z</lastmod>
   </url>
   <url>
-    <loc>https://bayes-thinking.github.io/website/instructors/7-0-beta-binomial-lesson-plan.html</loc>
-    <lastmod>2024-01-15T21:53:51.641Z</lastmod>
+    <loc>https://bayes-thinking.github.io/website/instructors/1-0-probability-lesson-plan.html</loc>
+    <lastmod>2024-01-15T22:25:28.810Z</lastmod>
   </url>
   <url>
-    <loc>https://bayes-thinking.github.io/website/instructors/2-1-probability-2-in-class-examples.html</loc>
-    <lastmod>2024-01-15T21:53:49.128Z</lastmod>
+    <loc>https://bayes-thinking.github.io/website/instructors/0-0-placeholder.html</loc>
+    <lastmod>2024-01-15T22:25:34.216Z</lastmod>
   </url>
   <url>
-    <loc>https://bayes-thinking.github.io/website/instructors/11-posterior-prediction-lesson-plan.html</loc>
-    <lastmod>2024-01-15T21:53:46.045Z</lastmod>
+    <loc>https://bayes-thinking.github.io/website/instructors/9-0-MCMC-lesson-plan.html</loc>
+    <lastmod>2024-01-15T22:25:24.419Z</lastmod>
   </url>
   <url>
-    <loc>https://bayes-thinking.github.io/website/instructors/1-1-probability-1-in-class-examples.html</loc>
-    <lastmod>2024-01-15T21:53:42.970Z</lastmod>
+    <loc>https://bayes-thinking.github.io/website/instructors/2-0-probability-lesson-plan.html</loc>
+    <lastmod>2024-01-15T22:25:21.576Z</lastmod>
   </url>
   <url>
     <loc>https://bayes-thinking.github.io/website/index.html</loc>
-    <lastmod>2024-01-15T21:53:40.292Z</lastmod>
+    <lastmod>2024-01-15T22:25:19.812Z</lastmod>
   </url>
   <url>
     <loc>https://bayes-thinking.github.io/website/examples.html</loc>
-    <lastmod>2024-01-15T21:53:40.270Z</lastmod>
+    <lastmod>2024-01-15T22:25:19.098Z</lastmod>
   </url>
   <url>
     <loc>https://bayes-thinking.github.io/website/instructors/4-0-Bayes-theorem-lesson-plan.html</loc>
-    <lastmod>2024-01-15T21:53:40.981Z</lastmod>
+    <lastmod>2024-01-15T22:25:20.220Z</lastmod>
   </url>
   <url>
-    <loc>https://bayes-thinking.github.io/website/instructors/5-1-priors-in-class-examples.html</loc>
-    <lastmod>2024-01-15T21:53:45.468Z</lastmod>
-  </url>
-  <url>
-    <loc>https://bayes-thinking.github.io/website/instructors/2-0-probability-2-lesson-plan.html</loc>
-    <lastmod>2024-01-15T21:53:47.687Z</lastmod>
+    <loc>https://bayes-thinking.github.io/website/instructors/6-0-likelihood-lesson-plan.html</loc>
+    <lastmod>2024-01-15T22:25:23.291Z</lastmod>
   </url>
   <url>
     <loc>https://bayes-thinking.github.io/website/instructors/5-0-priors-lesson-plan.html</loc>
-    <lastmod>2024-01-15T21:53:50.425Z</lastmod>
+    <lastmod>2024-01-15T22:25:25.812Z</lastmod>
+  </url>
+  <url>
+    <loc>https://bayes-thinking.github.io/website/instructors/7-0-beta-binomial-lesson-plan.html</loc>
+    <lastmod>2024-01-15T22:25:28.118Z</lastmod>
   </url>
   <url>
     <loc>https://bayes-thinking.github.io/website/instructors/3-0-probability-distribution-lesson-plan.html</loc>
-    <lastmod>2024-01-15T21:53:52.914Z</lastmod>
+    <lastmod>2024-01-15T22:25:30.797Z</lastmod>
   </url>
   <url>
-    <loc>https://bayes-thinking.github.io/website/instructors/1-0-probability-1-lesson-plan.html</loc>
-    <lastmod>2024-01-15T21:53:55.635Z</lastmod>
+    <loc>https://bayes-thinking.github.io/website/instructors/10-0-Gibbs-sampler-lesson-plan.html</loc>
+    <lastmod>2024-01-15T22:25:33.395Z</lastmod>
   </url>
   <url>
     <loc>https://bayes-thinking.github.io/website/about.html</loc>
-    <lastmod>2024-01-15T21:53:57.586Z</lastmod>
+    <lastmod>2024-01-15T22:25:34.251Z</lastmod>
   </url>
   <url>
     <loc>https://bayes-thinking.github.io/website/examples/8-1-normal-normal-in-class-examples.html</loc>
-    <lastmod>2024-01-15T21:53:59.407Z</lastmod>
+    <lastmod>2024-01-15T22:25:36.075Z</lastmod>
+  </url>
+  <url>
+    <loc>https://bayes-thinking.github.io/website/examples/5-1-priors-in-class-examples.html</loc>
+    <lastmod>2024-01-15T22:25:38.862Z</lastmod>
+  </url>
+  <url>
+    <loc>https://bayes-thinking.github.io/website/examples/10-1-Gibbs-sampler-in-class-examples.html</loc>
+    <lastmod>2024-01-15T22:25:41.118Z</lastmod>
   </url>
   <url>
     <loc>https://bayes-thinking.github.io/website/examples/1-1-probability-in-class-examples.html</loc>
-    <lastmod>2024-01-15T21:54:03.035Z</lastmod>
+    <lastmod>2024-01-15T22:26:14.138Z</lastmod>
+  </url>
+  <url>
+    <loc>https://bayes-thinking.github.io/website/examples/9-1-MCMC-in-class-examples.html</loc>
+    <lastmod>2024-01-15T22:26:16.422Z</lastmod>
+  </url>
+  <url>
+    <loc>https://bayes-thinking.github.io/website/examples/2-1-probability-in-class-examples.html</loc>
+    <lastmod>2024-01-15T22:26:18.939Z</lastmod>
   </url>
 </urlset>
