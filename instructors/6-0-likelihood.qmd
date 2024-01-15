@@ -1,0 +1,371 @@
+---
+title: "Likelihood - Data Distributions "
+format: 
+  html:
+    embed-resources: true
+execute:
+  echo: true
+  warning: false
+  message: false
+editor: source  
+---
+
+**Lesson Plan: Likelihood - Data Distributions**
+
+**Objectives** 
+- Students will be able to identify the proper distribution that would be used to model various scenarios.  
+- Students will calculate probabilities and likelihoods.
+
+**Duration:** 75 minutes
+
+**Materials:**
+
+	- Whiteboard and markers
+	- Handouts with exercises and problems
+	- Projector and screen
+	
+**Introduction** 
+Present a situation modeled by a discrete distribution and a situation modeled by a continuous situation.  Have some groups of students discuss which situation, A or B, could be modeled with a discrete distribution. Have the other groups of students discuss which situation, A or B,  could be modeled with a  continuous distribution.  All groups should be able to justify their choice with a valid mathematical reason.
+
+### Events and Sample Spaces
+
+::: {.panel-tabset}
+## **Scenarios**
+
+
+**Scenario A** The probability that my Canvas assignment page for this course will have 40 clicks in an hour.
+
+**Scenario B** The probability that the time between clicks is 40 hours. 
+
+
+## **Sample Student Response:** 
+
+<font color = "red">
+**Scenario A** could be modeled by a discrete distribution because the number of clicks will always be a discrete value because you can’t have half of a click.
+
+**Scenario B** could be modeled by a continuous distribution because the time between clicks could be any positive value. For example, the time could be 40.5 hours or 40.75 hours.
+</font>
+:::
+
+
+## **Main Content:** 
+
+**Likelihood**- When your data x is known, the likelihood function L(π| x) allows us to compare the likelihoods of different scenarios for the parameter value π, producing data x.
+
+
+  -The likelihood function provides the tool we need to evaluate the relative compatibility of different values for parameter π with data x.
+  
+
+  -When working with data, identifying the distribution that would best model your data is useful when working to create a posterior distribution from a prior distribution and your data (likelihood function).
+
+  -Today, we will review (this is meant to be a brief review so that you can have the students complete the activity.) some of the most useful and common distributions we will use in this course.  One of our goals today is to be able to identify scenarios that these distributions would model.
+  
+  -We will first look at discrete distributions and then at continuous distributions.
+
+### **Discrete Distributions**
+::: {.panel-tabset}
+
+## **Binomial** 
+- Binomial(n,π) is used to model the number of successes in a sample of size n when drawn with replacement from a population of size N. 
+    i.  Where n is the number of independent trials, and 
+    ii. π is the probability of success for each trial. 
+    
+The following properties of the binomial distribution may help you identify when a situation should be modeled this way.
+
+**Properties of the Binomial Distribution**
+	
+  1. Two possible outcomes: success or failure, have a characteristic or do not have a characteristic.
+	
+  2. n number of independent trials or a fixed number of n times repeated trials
+
+  3. Probability of success is the same for each trial
+	
+**Example-Identifying Distribution:** 
+When modeling side effects from a new drug, a researcher knows that 10% of the population experience a side effect when taking this class of drugs. The researcher has a sample of 1,800 people. The researcher wants to know the probability that less than 50 people from the sample will experience a side effect. The distribution would be **Binomial(800, .10)**
+
+## **Poisson**
+- Pois(λ) The Poisson models the probability of an event happening a certain number of times within a given interval of time or space. 
+- The events occur independently with a constant mean rate, λ, which is the mean number of events in a fixed interval.
+
+**Example:** 
+JCPenney’s call center expects 100 calls per hour.  What is the probability that the center will receive 78 calls in the next hour? The distribution we could use to model this situation is Poisson, *Pois(100)**.
+
+:::
+
+
+### **Continuous Distributions**
+
+::: {.panel-tabset}
+
+## **Normal - N(µ,σ)**
+
+Properties of the Normal Distribution:
+
+a. Bell-shaped, symmetric, and unimodal. 
+
+b. Roughly follows the empirical rule
+
+    -About 68% of data falls within one standard deviation of the mean.     
+    -About 95% of data falls within two standard deviations of the mean, and 
+    
+    -About 99.7% of data falls within three standard deviations of the mean.  
+    
+This distribution is used to model many situations.
+
+
+**Ask students:**
+
+  1. Share an example of a situation that they have modeled with a normal distribution with their group.
+  
+  2. Then, have the groups share some of their examples.
+	
+Record students’ examples in the notes.
+
+## **Uniform - U(a, b)**
+
+The uniform distribution is a probability distribution in which every value between an interval [a, b] is equally likely to occur.
+**Ask students:** 
+
+1. Share an example of when we would use a uniform distribution.
+
+Record examples in the notes.
+
+
+## **Beta - Beta (α, β)** 
+Unlike other distributions with shape and scale parameters, the beta distribution has two shape parameters, α and β. 
+
+i. Both parameters must be positive values. 
+ii. The Beta distribution is a probability distribution on probabilities, so its domain is bounded between 0 and 1. 
+iii. The beta distribution represents all of the possible values of a probability when we don’t know that probability.
+
+
+We could use a Beta distribution to model the following situation: 
+
+**Scenario:** A drug company believes their new medicine will be effective on humans 90% of the time.  The medicine is tried on 200 patients, and it is effective with 180 patients.This is a **Beta(90, 10)**.
+
+Teacher's Notes:
+
+  Desmos has the beta function parameterized in a different format, but it is easy to alter. https://www.desmos.com/calculator/kx83qio7yl
+	
+  Consider using this video either in class or as an assignment. The video is 16 minutes long and relates the beta distribution to data science and Bayesian statistics. This might be better for a graduate course. https://www.youtube.com/watch?v=1k8lF3BriXM
+
+## **Gamma**
+
+The gamma distribution uses two parameters. There are two equivalent parameterizations, and the second one listed below is more commonly used in Bayesian statistics.
+
+  1. Γ(k, ϴ) Shape parameter k and scale parameter ϴ.
+  
+  2. Γ(α, β) Shape parameter α = k and an inverse scale parameter β = 1/θ  
+
+-   The gamma distribution describes the waiting time until a certain number of events occur in a Poisson process with a given rate. 
+-   It also is used to model variables that are positive and right-skewed.  
+-   Special cases of the gamma distribution are the exponential, Erlang, and Chi-Squared.
+
+**Example:**
+Amazon’s call center receives calls at an average rate of β = 500 calls per hour. The time until the kth call will have the distribution Γ(k, 1/500), since the scale parameter is ϴ =1/500
+ 
+
+## **Exponential - exp(λ)**
+
+The exponential probability distribution is used to model the time we must wait until a certain event occurs. 
+
+The rate parameter, λ (calculated as λ = 1/μ).
+
+**Example** 
+Modeling the time a postal clerk spends with their customers. In this case, let's say it is 2 minutes, then that would be Exp (1/2).
+
+**Confused about the difference between Poisson and exponential distribution?**
+
+-   Remember that the Poisson distribution is discrete and deals with the number of occurrences of events in a fixed period of time. 
+-   Exponential distribution is continuous and is often concerned about the amount of time until an event happens.
+
+**Example:** 
+A new customer enters the post office every two minutes, on average. After a customer arrives, find the probability that a new customer will arrive in less than one minute.
+
+The average time between customers is two minutes. Thus, the rate can be calculated as: λ = 1/μ = ½=.5
+	
+**Solution:**
+To answer this, we will need to use the CDF of the exponential distribution.
+
+We can substitute in λ = 0.5 and x = 1 to the formula for the CDF:
+
+-   	P(X ≤ x) = 1 – e-λx
+
+-   	P(X ≤ 1) = 1 – e-0.5(1)
+
+-     P(X ≤ 1) = 0.3935
+
+The probability that we’ll have to wait less than one minute for the next customer to arrive is 0.3935.
+
+Review question for Students that you may ask in class or give for homework: How could you do this calculation using R? 
+
+:::
+
+### **Activities**
+
+::: {.panel-tabset}
+
+## **Activity 1**
+
+**Class Activity - Recognition of Data Distributions**
+
+Create a sort. Mix up the scenarios and have them match to the correct distribution.  You could print the scenarios on index cards and have them organize them that way or use Desmos to create an electronic version of the card sort.
+
+**Binomial distribution (discrete)**
+
+-   Situation: Neilson survey for watching or not watching a TV show.
+-   Situation: Model the probability that a certain number of credit card transactions are fraudulent per day.
+-   Situation: Modeling the number of returns to a store per week based on the number of transactions.
+
+**Poisson distribution (discrete)**
+
+-   Situation: A manager of Panda Express wants to model the number of expected customers that will arrive at the restaurant per day.
+-   Situation: Model the number of expected visitors per hour that a website receives so that there is enough bandwidth to handle a specific number of visitors.
+-   Situation: Model the number of power grid failures in a week.
+
+**Normal distribution (continuous)**
+
+-   Situation: A hospital wants to model the birth weight of newborn babies in Virginia to identify babies born with unusually low birth weights.
+-   Situation: A pediatrician wants to model a boy’s height at age 16 to identify if a boy is unusually tall as a sign of Marfan syndrome.
+-   Situation: A financial advisor wants to model the average retirement age of an NFL player so that they can present several investing strategies to players from the Pittsburgh Steelers.
+
+**Uniform distribution (continuous)**
+
+-   Situation: You want to model the probability of people having a specific birthday date.
+-   Situation: A gambler would like to know the probability of rolling a 1-6 with a six-sided dice.
+-   Situation: The Virginia Lottery designs a new scratcher game and prints a million of them, and only 1 is a winner. They need to know the probability of each card printed being a winner.
+
+**Beta distribution (continuous)**
+
+This is a versatile distribution so students find this difficult to identify.
+
+-   Situation: A social media influencer wants to model the likelihood of people clicking the follow button.
+-   Situation: A politician wants to model the probability of the incumbent winning a second term in office.
+-   Situation: A researcher wants to model the 5-year survival rate of men with prostate cancer using radiation only as a treatment.
+
+**Gamma distribution (continuous)**
+
+-   Situation: JCPenney’s call center manager wants to be able to model the time until a particular number of calls have come into their center.
+-   Situation: A manager of Bernetti’s Pizza wants to model the time until the 50th order is called into the restaurant so that he can estimate when their business is in the profit zone. 
+-   Situation: A bank manager knows that, on average, there are 100 customers that are served. He would like to know the time it takes for 80 of the customers to be served.
+
+	**Exponential distribution (continuous)**
+-   Situation: How long will my new dishwasher will work before it breaks down?
+-   Situation: How long will it be until Virginia has another 5.8 or greater magnitude earthquake? (The last one was August 23, 2011, in Louisa, Virginia)
+-   Situation: How long does your professor have to wait until a student enters the classroom?
+
+
+Now that we have a better idea of what distribution to use to model these different situations, we are going to look at how data is used in Bayesian analysis.
+
+## **Activity 2**
+
+**Analysis- Is this Fake News?: Exclamation Point in Title Helps with Identification**
+
+This activity utilizes Chapter 2 from Bayes Rules!** (Johnson et al.,2021).
+
+Examine a sample of 150 articles that were posted on Facebook and fact-checked by five BuzzFeed journalists (Shu et al. 2017). Information about each article is stored in the fake_news dataset in the bayesrules package. To learn more about this dataset,type `?fake_news` in your console.
+
+```{r fake1}
+#| eval: false
+# Load packages
+library(bayesrules)
+library(tidyverse)
+library(janitor)
+
+# Import article data
+data(fake_news)
+
+```
+
+
+
+
+
+Using the janitor package, we can create a table which helps us see the type of article, how many n, and the percent. Use the top 3 lines  to get the information in the table below those lines.
+
+```{r fake2}
+#| eval: false
+fake_news %>% 
+  tabyl(type) %>% 
+  adorn_totals("row")
+```
+
+![Table: Prior](images/fake_prior.png)
+
+This data provides us with information to begin our analysis and we call this the **prior distribution.**
+
+Next, we want to see how many real and fake news articles use exclamation points in the article title. 
+
+Copy the first 4 rows into your console to obtain the table below those rows.
+
+```{r fake3}
+#| eval: false
+# Tabulate exclamation usage and article type
+fake_news %>% 
+  tabyl(title_has_excl, type) %>% 
+  adorn_totals("row")
+
+
+```
+
+
+
+Below, you will see a completed two-way table. The variable in the columns tells us the type of news the article was classified, fake or real.  The variable in the rows tells us if the title of the article has an exclamation point, is true, or is not false.
+
+![Table: data](images/table_fake_color.png)
+
+**Calculation of the Likelihoods**
+
+  1. What is the probability that the title has an exclamation point given that the article is fake news?
+likelihood: P(True|Fake)=16/60 = .2667, about 26.67%
+
+  2. What is the probability that the title has an exclamation point given that the article is real news?
+likelihood: P(True|Real)=2/90=.0222, about a 2.22% 
+
+
+![Table: Prior and Likelihood (data)](images/table_likelihood_fake.png)
+
+
+**Note: **The likelihoods do not have to add to 1.
+
+A joint probability model of the fake status and exclamation point usage across all articles can be calculated.
+
+![Table: Joint Probability Model](images/joint_fake.png)
+
+  a. P(True|Fake)   = 0.2667 x 0.4   = 0.1067
+  b. P(False|Fake)  = [(1-.2667)x.4] = [.7333x.4] = 0.2933
+  c. P(True|Real)   = 0.0222 x 0.6   = 0.0133
+  d. P(False|Real)  = [(1-.0222)x.6] = [.9778x.6] = 0.5867
+
+Knowing the likelihood distribution can help us pair it with a conjugate prior (which is something we will be learning about in a future class). When we have a conjugate prior, then we have an easy-to-derive and interpret the posterior model. 
+
+Here is a listing that may assist you in the pairing of these two distributions: https://en.wikipedia.org/wiki/Conjugate_prior
+
+:::
+
+## **Conclusion:**
+  a. Ask students summarize what they learned today.  
+  b. Make sure to have students re-voicing  what other students are saying. (This will encourage engagement.)  
+  c. Ask students to explain what one of their peers said.
+  d. Provide each student with an **Exit Ticket** and have that include some questions that check for understanding.  
+  **Example Questions for Exit Ticket:**
+      i. You may ask students to tell you what they are confident they understand.
+      ii. Hve students list a topic or concept they are still grappling with to understand.  (This will help you plan for any necessary review at the beginning of the next class.)
+      
+## **Assignment:**
+Work through Chapter 7 in the Probability and Bayesian Modeling by Albert & Hu. This takes you through a similar problem, showing you how to use R to assist with the calculations. https://monika76five.github.io/ProbBayes/
+
+
+
+## **References:**
+Albert, J., & Hu, J. (2019). Probability and Bayesian modeling. CRC press. https://monika76five.github.io/ProbBayes/
+
+Conjugate prior. (2023, July 30). In Wikipedia. https://en.wikipedia.org/wiki/Conjugate_prior
+
+Firke, Sam. 2021. Janitor: Simple Tools for Examining and Cleaning Dirty Data. https://github.com/sfirke/janitor.
+
+Johnson, A. A., Ott, M. Q., & Dogucu, M. (2022). Bayes rules!: An introduction to applied Bayesian modeling. CRC Press. https://www.bayesrulesbook.com/foreword
+
+Shu, Kai, Amy Sliva, Suhang Wang, Jiliang Tang, and Huan Liu. 2017. “Fake News Detection on Social Media: A Data Mining Perspective.” ACM SIGKDD Explorations Newsletter 19 (1): 22–36.
+
+Wickham, Hadley. 2016. Ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York.
