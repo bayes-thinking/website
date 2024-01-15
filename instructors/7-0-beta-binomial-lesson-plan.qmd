@@ -1,0 +1,230 @@
+---
+title: "Introduction to the Beta-Binomial Model"
+format: html
+---
+
+**Duration**: 75 minutes
+
+**Learning Objectives**:
+
+-   Understand the Beta-Binomial distribution and its application in Bayesian modeling.
+
+-   Implement the Beta-Binomial model in R.
+
+-   Interpret the results of the model.
+
+-   Gain hands-on experience through practical examples.
+
+**Materials**:
+
+-   R and RStudio installed on participants' computers.
+
+-   Sample dataset (e.g., data on the number of successes and total trials for a series of events).
+
+**Lesson Outline**:
+
+**Introduction** (5 minutes)
+
+-   Briefly recap Bayesian statistics and its advantages.
+
+-   Introduce the Beta-Binomial distribution and its significance in Bayesian modeling.
+
+**Theory and Concepts** (15 minutes)
+
+-   Explain the Beta distribution and its parameters (α and β).
+
+-   Describe how the Beta distribution is used as a prior in Bayesian modeling.
+
+-   Explain the Binomial distribution and its parameters (n and p).
+
+**Practical Implementation** (15 minutes)
+
+-   Load necessary libraries (e.g., *rstan*, *ggplot2*, *dplyr*).
+
+-   Generate a sample dataset (e.g., a hypothetical dataset of success/failure trials).
+
+```{r}
+# Sample R Code
+# Load libraries
+# library(rstan)
+# library(ggplot2)
+# library(dplyr)
+# Generate a sample dataset
+# set.seed(123)
+# successes <- c(12, 15, 17, 19, 20)
+# trials <- c(20, 20, 20, 20, 20)
+# data <- data.frame(successes, trials)
+
+  
+```
+
+-   Define the Beta-Binomial model in Stan, specifying the likelihood and prior distributions.
+
+```{r}
+# Beta-Binomial model in Stan
+
+#data {
+  #int<lower=0> N;        # Number of observations
+  #int<lower=0> y[N];     # Count data
+  #int<lower=0> n_trials; # Number of trials (constant for a binomial distribution)
+#}
+
+# parameters {
+   #real<lower=0, upper=1> theta;  # Probability parameter
+   #real<lower=0> alpha;           # Beta distribution shape parameter
+   #real<lower=0> beta;            # Beta distribution shape parameter
+#}
+
+#model {
+  # Prior distribution
+ # theta ~ beta(alpha, beta);
+
+  # Likelihood
+ # y ~ binomial(n_trials, theta);
+#}
+
+
+```
+
+-   Compile and fit the model using the **rstan** package.
+
+```{r}
+# Install and load the rstan package
+#install.packages("rstan")
+#library(rstan)
+
+# Define the data
+#data_list <- list(
+  #N = length(your_data),
+  #y = your_data,
+  #n_trials = number_of_trials
+#)
+
+# Compile the Stan model
+#stan_model <- stan_model(file = "path/to/your/stan/model/file.stan")
+
+# Fit the model
+#fit <- sampling(stan_model, data = data_list, chains = 4, iter = 2000, warmup = 1000)
+
+# Print the summary of the posterior distribution
+# print(fit)
+
+```
+
+**Interpretation of Results** (10 minutes)
+
+-   Explain how to interpret the results of the Beta-Binomial model, including posterior distributions for parameters like theta (probability of success).
+
+-   Visualize the posterior distribution using plots.
+
+```{r}
+# Sample R Code:
+# Plot posterior distribution of theta
+# posterior_samples <- as.data.frame(fit)
+# ggplot(posterior_samples, aes(x = theta)) +
+# geom_histogram(binwidth = 0.01, fill = "blue", color = "black") +
+# labs(title = "Posterior Distribution of Theta", x = "Theta (Probability of Success)") 
+
+```
+
+**Hands-on Practice** (15 minutes)
+
+-   Provide additional datasets for participants to analyze using the Beta-Binomial model.
+
+-   Encourage participants to fit the model, interpret results, and visualize the posterior distribution.
+
+**Q&A and Discussion** (10 minutes)
+
+-   Address any questions or concerns from participants.
+
+-   Discuss real-world applications and extensions of the Beta-Binomial model.
+
+**Conclusion** (5 minutes)
+
+-   Summarize key takeaways from the lesson.
+
+-   Provide resources and references for further learning.
+
+-   Encourage participants to explore more complex Bayesian models and applications.
+
+**Homework Assignment**: Ask participants to analyze a real-world dataset using the Beta-Binomial model in R and share their findings in the next session.
+
+**Assessment**: Evaluate participants' understanding through their ability to implement the Beta-Binomial model, interpret results, and engage in discussions during the lesson.
+
+---------------------------------------------------------------------------------------
+
+**Additional Notes and Resources**
+
+**Explanation of the Beta Binomial Bayesian Model with examples from the Health Sciences**
+
+The Beta-Binomial Bayesian model is a statistical model used in various fields, including health sciences, to analyze and make inferences about data characterized by the number of successes in a fixed number of trials, where the probability of success can vary. It combines two key distributions: the Beta distribution as a prior for the probability of success and the Binomial distribution to model the observed data. This model is particularly useful in health sciences for a wide range of applications, such as clinical trials, epidemiology, and medical testing. Let's explore the model with a couple of health science examples:
+
+**Some technical notes:**
+
+$$
+Y|\pi \sim Bin(n, \pi)
+$$
+
+$$
+\pi \sim Beta(\alpha, \beta)
+$$
+
+$$
+\pi |(Y=y) \sim Beta (\alpha + y, \  \beta +n -y)
+$$
+
+1.  **Prior Model**
+
+    $$
+    f(\pi)=\frac{\Gamma(\alpha + \beta)}{\Gamma(\alpha)\Gamma(\beta)}\pi^{\alpha - 1}
+    (1-\alpha)^{\beta -1}$$
+
+2.  **Data Model**
+
+    $$
+    Bin(n, \pi)
+    $$
+
+3.  **Likelihood function**
+
+    $$
+    L(\pi |y)=\binom {n}{y}\pi^y
+    (1-\pi)^{n-y}$$
+
+4.  **Posterior Model**
+
+    $$
+    f(\pi |y) \propto f(\pi)L(\pi|y) = \frac{\Gamma(\alpha+\beta)}{\Gamma(\alpha)\Gamma(\beta)}\pi^{\alpha-1}(1-\pi)^{\beta-1}\binom{n}{y} \propto \pi^{(y+\alpha)-1}(1-\pi)^{(\beta +n-y)-1} = Beta(\alpha +y, \ \beta+n-y)
+    $$
+    
+::: {.panel-tabset}
+
+## **Example 1** 
+
+Suppose a pharmaceutical company is conducting a clinical trial to evaluate the success rate of a new drug in treating a specific disease. They enroll 100 patients and record how many of them respond positively to the treatment (successes). In this case, the Beta-Binomial model can be used to estimate the probability of success and its uncertainty.
+
+-   *Beta Distribution as Prior*: The company might have prior beliefs about the success rate of similar drugs and express it using a Beta distribution. For example, they believe that the success rate follows a Beta(10, 10) distribution, which represents a relatively neutral prior with a mean of 0.5.
+
+```{=html}
+<!-- -->
+```
+-   *Binomial Distribution for Data*: If, out of 100 patients, 60 respond positively to the new drug, the observed data follows a Binomial distribution with parameters n=100 (number of trials) and p (the success rate).
+
+In this scenario, the Bayesian analysis will update the prior Beta distribution with the observed data, yielding a posterior distribution for the success rate, which provides not only a point estimate but also a credible interval representing the uncertainty around the estimate.
+
+## **Example 2**
+
+Epidemiologists want to estimate the prevalence of a rare disease in a population. They decide to conduct a study in which they take a random sample of 500 individuals and test them for the presence of the disease. In this case, the Beta-Binomial model can be used to estimate the prevalence of the disease in the population.
+
+-   *Beta Distribution as Prior*: Epidemiologists might use a Beta(2, 8) distribution as a prior for the prevalence. This implies they have prior knowledge suggesting that the prevalence is low (mean of 0.2) but with some uncertainty.
+
+```{=html}
+<!-- -->
+```
+-   *Binomial Distribution for Data*: If 10 individuals in the sample test positive for the disease, the observed data follows a Binomial distribution with n=500 (number of trials) and p (prevalence).
+
+In this scenario, the Bayesian analysis will update the prior Beta distribution with the observed data, resulting in a posterior distribution for the prevalence of the disease. This posterior distribution gives a range of credible estimates for the disease prevalence in the population.
+
+:::
+
+In both examples, the Beta-Binomial model not only provides a point estimate of the parameter of interest (success rate or disease prevalence) but also quantifies the uncertainty around the estimate, which is a valuable feature in health sciences where decisions can have critical consequences. It allows researchers to make informed decisions, taking both prior beliefs and observed data into account.

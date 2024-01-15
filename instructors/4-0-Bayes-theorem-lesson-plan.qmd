@@ -1,0 +1,87 @@
+---
+title: "Introduction to Bayes' Theorem"
+format: 
+  html:
+    embed-resources: true
+execute:
+  echo: true
+  warning: false
+  message: false
+editor: source  
+---
+
+**Objective:** 
+
+- By the end of this lesson, students will be able to understand the concept of Bayes' Theorem, its historical context, and its applications in probability and statistics.
+
+**Duration:** 
+
+- About 60 minutes
+
+**Materials:**
+
+- Whiteboard and markers
+- Handouts with exercises and problems related to Bayes' Theorem
+- Projector and screen
+
+**Introduction:**
+
+- Begin the lesson with a question to engage students: "Have you ever wondered how we make decisions based on uncertain information?" 
+- Discuss a few examples, like medical diagnoses, weather forecasts, or financial decisions.
+
+**Introduce the lesson's topic:** 
+
+- Bayes' Theorem, a fundamental concept in probability theory that helps us update our beliefs based on new evidence.
+
+**Historical Context:**
+
+- Bayes' Theorem is named after Reverend Thomas Bayes, an 18th-century English statistician, philosopher, and theologian.
+- Thomas Bayes never published his work on the theorem during his lifetime. It was discovered in his notes after his death and published posthumously.
+- Story of Thomas Bayes:
+    - Thomas Bayes was born in 1701 and is believed to have been largely self-educated in mathematics and logic.
+    - He became a Presbyterian minister, and his interests in theology and mathematics intersected in intriguing ways.
+    - While not widely known during his lifetime, his work laid the foundation for modern probability theory.
+
+**Main Content:** Bayes' Theorem
+
+**Basic Probability Concepts:**
+
+- Define key terms: prior probability, posterior probability, likelihood, evidence, and conditional probability.
+- Provide examples to illustrate these concepts, such as rolling dice or drawing cards from a deck.
+
+**Understanding Bayes' Theorem:**
+
+- Present the formula for Bayes' Theorem:
+$$ \text{P}( A | B ) = \frac{\text{P}( B | A ) \text{P}(A)}{\text{P}(B)} $$
+
+- Discuss how Bayes' Theorem allows us to update our beliefs about an event $A$ given new evidence $B$.
+
+**Applications of Bayes' Theorem:**
+
+- Medical diagnosis (e.g., disease testing)
+- Criminal investigations (e.g., DNA evidence)
+- Spam email filtering
+- Weather forecasting
+
+**Calculation and Practice:**
+
+- Guide students through solving example problems using Bayes' Theorem.
+- Distribute handouts with exercises and problems for individual or group work.
+
+**Discussion and Wrap-Up:**
+
+- Facilitate a class discussion to review the example problems and reinforce key concepts.
+- Ask students about their thoughts on how Bayes' Theorem can be applied in their daily lives or in other fields of study.
+
+**Homework:**
+
+- Assign additional problems from the textbook or handouts to reinforce the understanding of Bayes' Theorem.
+
+**Formative Assessment:**
+
+- Evaluate students based on their participation in discussions, their ability to solve example problems, and their performance on the assigned homework.
+
+**Conclusion:**
+
+- Let students summarize the importance of Bayes' Theorem in making informed decisions under uncertainty. 
+- Encourage students to explore further applications and study advanced topics in probability and statistics.
